@@ -9,7 +9,10 @@ export class HeroSectionComponent implements OnInit {
 
   constructor() { }
 
+  array = [1, 2, 3, 4];
+
   ngOnInit(): void {
   }
+
 
 }
