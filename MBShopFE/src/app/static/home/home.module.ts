@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
+import { ProductSectionComponent } from './product-section/product-section.component';
 
 //ng-zorro
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
-import { ProductSectionComponent } from './product-section/product-section.component';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ProductSectionComponent } from './product-section/product-section.compo
     CommonModule,
     HomeRoutingModule,
     NzGridModule,
-    NzCarouselModule
+    NzCarouselModule,
+    NzCardModule
   ]
 })
 export class HomeModule { }
