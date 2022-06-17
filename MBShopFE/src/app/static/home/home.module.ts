@@ -10,10 +10,11 @@ import { ProductSectionComponent } from './product-section/product-section.compo
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { AboutSectionComponent } from './about-section/about-section.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, HeroSectionComponent, ProductSectionComponent],
+  declarations: [HomeComponent, HeroSectionComponent, ProductSectionComponent, AboutSectionComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
