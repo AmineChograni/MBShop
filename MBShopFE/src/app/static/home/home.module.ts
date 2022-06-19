@@ -12,12 +12,13 @@ import { HomeComponent } from './home.component';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { ProductSectionComponent } from './product-section/product-section.component';
 import { AboutSectionComponent } from './about-section/about-section.component';
+import { ContactSectionComponent } from './contact-section/contact-section.component';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, HeroSectionComponent, ProductSectionComponent, AboutSectionComponent],
+  declarations: [HomeComponent, HeroSectionComponent, ProductSectionComponent, AboutSectionComponent, ContactSectionComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
