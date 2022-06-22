@@ -1,17 +1,14 @@
 <div nz-row nzJustify="center" class="hero-section">
-    <div nz-col nzSpan="23">
+    <div nz-col nzSpan="10" class="left-side">
+        <h1 class="title">découvrir nouvelle produits</h1>
+        <p class="desc">MBSHOP VOUS PROPOSE UNE GRANDE SÉLECTION MODE ET TENDANCE HOMME ET FEMME. PLUS DE 100 MODÈLES ADAPTÉS À TOUTES SAISONS ET OCCASIONS.</p>
+        <button nz-button nzType="primary" nzSize="large">EN SAVOIR PLUS</button>
+    </div>
+    <div nz-col nzSpan="14">
         <nz-carousel nzAutoPlay>
-            <div nz-carousel-content *ngFor="let index of array" >
-                <div nz-row nzJustify="center" class="second-container">
-                    <div nz-col nzSpan="10">
-                        <h3>Title</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, dignissimos nobis nihil explicabo minima animi?</p>
-                        <button>test</button>
-                    </div>
-                    <div nz-col nzSpan="14" class="right-side">
-                    </div>
-                </div>
+            <div nz-carousel-content *ngFor="let hero of heroOBJS" style="background-image: url({{hero.imgURL}});">
+                
             </div>
-        </nz-carousel>
+          </nz-carousel>
     </div>
 </div>

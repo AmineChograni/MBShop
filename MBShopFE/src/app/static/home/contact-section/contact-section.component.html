@@ -1,1 +1,38 @@
-<p>contact-section works!</p>
+<div nz-row nzJustify="center" class="contact-section">
+    <div nz-col nzSpan="12" class="lift-side">
+        <h2>Contact us</h2>
+        <form nz-form [formGroup]="validateForm" class="contact-form" (ngSubmit)="submitForm()">
+            <nz-form-item>
+              <nz-form-control nzHasFeedback nzErrorTip="Please input your username!">
+                <nz-input-group nzPrefixIcon="user">
+                  <input type="text" nz-input formControlName="userName" placeholder="Username" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="emailErrorTpl">
+                    <input nz-input formControlName="email" placeholder="email" type="email" />
+                    <ng-template #emailErrorTpl let-control>
+                        <ng-container *ngIf="control.hasError('email')">The input is not valid E-mail!</ng-container>
+                        <ng-container *ngIf="control.hasError('required')">Please input your E-mail!</ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control nzHasFeedback [nzSpan]="12" nzErrorTip="Please input your mobil number!">
+                  <input nz-input formControlName="mobile" placeholder="mobile" />
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control nzHasFeedback [nzSpan]="12" nzErrorTip="Please write something here!">
+                  <textarea formControlName="comment" nz-input rows="2" placeholder="write any thing"></textarea>
+                </nz-form-control>
+            </nz-form-item>
+            
+            
+            <button nz-button [nzType]="'primary'">SEND</button>
+            
+        </form>
+    </div>
+    <div nz-col nzSpan="12" class="right-side"></div>
+</div>

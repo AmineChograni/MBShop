@@ -1,19 +1,32 @@
-.hero-section{
-    height: 90%;
-}
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
 
 [nz-carousel-content] {
-    text-align: center;
-    background: #ffffff;
-    color: #000;
-    overflow: hidden;
-}
-.second-container{
-    height: 100%;
-}
-.right-side{
-    background-image: url(../../../../assets/images/shoes.jpg);
-
-    background-repeat: no-repeat;
+    height: 90vh;
+    color: #fff;
     background-size: cover;
+    overflow: hidden;
+    filter: grayscale(50%);
+    background-position: center; 
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    
+}
+.title{
+    margin-top: 200px;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 900;
+    text-align: center;
+}
+.desc{
+    text-align: center;
+}
+button{
+    text-align: center;
+    margin-top: 50px;
+}
+.left-side{
+    text-align: center;
 }

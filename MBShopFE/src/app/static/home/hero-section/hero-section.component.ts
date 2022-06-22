@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroSectionComponent implements OnInit {
 
+  heroOBJS: {imgURL: string }[] = [
+    { "imgURL": "../../../../assets/images/hommecla.jpg" },
+    {  "imgURL": "../../../../assets/images/shoes.jpg" },
+    {  "imgURL": "../../../../assets/images/enfant.jpg" },
+  ];
+
   constructor() { }
 
-  array = [1, 2, 3, 4];
 
   ngOnInit(): void {
   }
