@@ -1,42 +1,72 @@
 <section class="product-section">
     <div nz-row nzJustify="center" >
         <div nz-col nzSpan="22">
-            <h1>product section</h1>
-            <div nz-row nzJustify="space-between">
-                <div nz-col nzSpan="4">
-                    <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
-                        <nz-card-meta
-                          nzTitle="Card title"
-                          nzDescription="This is the description"
-                        ></nz-card-meta>
-                    </nz-card>
-                    <ng-template #coverTemplate>
-                        <img alt="example" src="../../../../assets/images/71D9ImsvEtL._UY500_.jpg" />
-                    </ng-template>
+            <h1 class="title">Derniers produits</h1>
+
+            <div class="products">
+                <p class="art-title">Homes products</p>
+                <div class="line"></div>
+                <div nz-row nzJustify="space-between">
+                    <!-- card -->
+                    <div nz-col nzSpan="4" *ngFor="let prod of Hprod">
+                        <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
+                            <nz-card-meta
+                              nzTitle="{{prod.PTitle}}"
+                            ></nz-card-meta>
+                            <h4 class="PPrice">{{prod.PPrice}} MAD</h4>
+                        </nz-card>
+                        <ng-template #coverTemplate>
+                            <img alt="example" src="{{prod.imgURL}}" />
+                        </ng-template>
+                    </div>
+                    <!-- end card -->
                 </div>
-                <div nz-col nzSpan="4">
-                    <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
-                        <nz-card-meta
-                          nzTitle="Card title"
-                          nzDescription="This is the description"
-                        ></nz-card-meta>
-                    </nz-card>
-                    <ng-template #coverTemplate>
-                        <img alt="example" src="../../../../assets/images/71D9ImsvEtL._UY500_.jpg" />
-                    </ng-template>
-                </div>
-                <div nz-col nzSpan="4">
-                    <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
-                        <nz-card-meta
-                          nzTitle="Card title"
-                          nzDescription="This is the description"
-                        ></nz-card-meta>
-                    </nz-card>
-                    <ng-template #coverTemplate>
-                        <img alt="example" src="../../../../assets/images/71D9ImsvEtL._UY500_.jpg" />
-                    </ng-template>
-                </div>
+                <p class="vop"><a routerLink='#'>Voir plus</a></p>
             </div>
+
+            <div class="products">
+                <p class="art-title">Femmes products</p>
+                <div class="line"></div>
+                <div nz-row nzJustify="space-between">
+                    <!-- card -->
+                    <div nz-col nzSpan="4" *ngFor="let prod of Fprod" >
+                        <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
+                            <nz-card-meta
+                              nzTitle="{{prod.PTitle}}"
+                            ></nz-card-meta>
+                            <h4 class="PPrice">{{prod.PPrice}} MAD</h4>
+                        </nz-card>
+                        <ng-template #coverTemplate>
+                            <img alt="example" src="{{prod.imgURL}}" />
+                        </ng-template>
+                    </div>
+                    <!-- end card -->
+                </div>
+                <p class="vop"><a routerLink='#'>Voir plus</a></p>
+            </div>
+
+            <div class="products">
+                <p class="art-title">Enfants products</p>
+                <div class="line"></div>
+                <div nz-row nzJustify="space-between">
+                    <!-- card -->
+                    <div nz-col nzSpan="4" *ngFor="let prod of Cprod">
+                        <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
+                            <nz-card-meta
+                              nzTitle="{{prod.PTitle}}"
+                            ></nz-card-meta>
+                            <h4 class="PPrice">{{prod.PPrice}} MAD</h4>
+                        </nz-card>
+                        
+                        <ng-template #coverTemplate>
+                            <img alt="example" src="{{prod.imgURL}}" />
+                        </ng-template>
+                    </div>
+                    <!-- end card -->
+                </div>
+                <p class="vop"><a routerLink='#'>Voir plus</a></p>
+            </div>
+            
         </div>
       </div>
 </section>
