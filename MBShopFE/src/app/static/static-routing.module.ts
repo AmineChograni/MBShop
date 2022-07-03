@@ -7,7 +7,8 @@ const routes: Routes = [
     path: '',
     component: StaticComponent,
     children: [
-      { path: "", loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule) }
+      { path: "", loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule) },
+      { path: "product", loadChildren: () => import('./product/product.module').then(mod=> mod.ProductModule) }
     ]
   },
 ];
