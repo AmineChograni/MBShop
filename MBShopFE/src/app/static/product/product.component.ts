@@ -12,4 +12,8 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  log(): void {
+    console.log('click dropdown button');
+  }
+
 }
