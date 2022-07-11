@@ -8,6 +8,10 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
 @NgModule({
   declarations: [ProductComponent],
@@ -18,7 +22,11 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
     NzGridModule,
     NzIconModule,
     NzPageHeaderModule,
-    NzDropDownModule
+    NzDropDownModule,
+    NzSelectModule,
+    NzCardModule,
+    NzBadgeModule,
+    NzPaginationModule
   ]
 })
 export class ProductModule { }

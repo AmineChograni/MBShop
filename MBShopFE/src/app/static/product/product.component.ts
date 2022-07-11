@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
+  selectedValue = null;
+  selectedColorValue=null;
+  selectedCategoriesValue=null;
+
   constructor() { }
+
 
   ngOnInit(): void {
   }
