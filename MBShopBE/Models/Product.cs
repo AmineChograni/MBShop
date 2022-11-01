@@ -5,19 +5,19 @@ namespace MBShopBE.Models
 {
     public class Product
     {
-        protected int Id { get; set; }
-        protected string Label { get; set; }
-        protected string Description { get; set; }
-        protected string Image { get; set; }
-        protected bool Sold { get; set; }
-        protected bool New { get; set; }
-        protected float Price { get; set; }
-        protected float PriceSold { get; set; }
-        protected int CategoryId { get; set; }
-        protected Category Category { get; set; }
-        protected ICollection<Taille> Tailles { get; set; }
-        protected ICollection<Couleur> Couleurs { get; set; }
-        protected ICollection<Tag> Tags { get; set; }
+        public int Id { get; set; }
+        public string Label { get; set; }
+        public string Description { get; set; }
+        public string Image { get; set; }
+        public bool Sold { get; set; }
+        public bool New { get; set; }
+        public float Price { get; set; }
+        public float PriceSold { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+        public ICollection<Taille> Tailles { get; set; }
+        public ICollection<Couleur> Couleurs { get; set; }
+        public ICollection<Tag> Tags { get; set; }
 
     }
 }

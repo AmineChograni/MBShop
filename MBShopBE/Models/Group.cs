@@ -4,8 +4,8 @@ namespace MBShopBE.Models
 {
     public class Group
     {
-        protected int Id { get; set; }
-        protected string Label { get; set; } 
-        protected ICollection<Category> Categories { get; set; }
+        public int Id { get; set; }
+        public string Label { get; set; } 
+        public ICollection<Category> Categories { get; set; }
     }
 }

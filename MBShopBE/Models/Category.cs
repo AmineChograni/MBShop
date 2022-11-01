@@ -1,13 +1,14 @@
-﻿using System.Collections;
+﻿
+using System.Collections.Generic;
 
 namespace MBShopBE.Models
 {
     public class Category
     {
-        protected int Id { get; set; }
-        protected string Label { get; set; }
-        protected int GroupId { get; set; }
-        protected Group Group { get; set; }
-        protected ICollection<Product> Products { get; set; }
+        public int Id { get; set; }
+        public string Label { get; set; }
+        public int GroupId { get; set; }
+        public Group Group { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }
