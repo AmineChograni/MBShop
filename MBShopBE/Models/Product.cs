@@ -8,10 +8,6 @@ namespace MBShopBE.Models
         public int Id { get; set; }
         public string Label { get; set; }
         public string Description { get; set; }
-        public string ImageMain { get; set; }
-        public string Imageone { get; set; }
-        public string Imagetwo { get; set; }
-        public string Imagethree { get; set; }
         public bool Sold { get; set; }
         public bool New { get; set; }
         public float Price { get; set; }
@@ -21,6 +17,8 @@ namespace MBShopBE.Models
         public ICollection<Taille> Tailles { get; set; }
         public ICollection<Couleur> Couleurs { get; set; }
         public ICollection<Tag> Tags { get; set; }
+        public MImage MImage { get; set; }
+        public ICollection<Image> Images { get; set; }
 
     }
 }
