@@ -3,7 +3,8 @@
     public class Commande
     {
         public int Id { get; set; }
-        public string Label { get; set; }
+        public string FName { get; set; }
+        public string LName { get; set; }
         public int Telephone { get; set; }
         public int TelephoneValidation { get; set; }
         public string Adresse { get; set; }
