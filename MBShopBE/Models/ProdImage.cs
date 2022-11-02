@@ -1,6 +1,6 @@
 ﻿namespace MBShopBE.Models
 {
-    public class Image
+    public class ProdImage
     {
         public int Id { get; set; }
         public string ImageURL { get; set; }

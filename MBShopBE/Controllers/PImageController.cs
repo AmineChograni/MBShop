@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System;
 using System.Net.Http.Headers;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MBShopBE.Controllers
 {
@@ -11,12 +13,14 @@ namespace MBShopBE.Controllers
     public class PImageController : ControllerBase
     {
         [HttpPost, DisableRequestSizeLimit]
-        public IActionResult Upload()
+        public async Task<IActionResult> UploadAsync()
         {
             try
             {
-                var file = Request.Form.Files[0];
-                var folderName = Path.Combine("Resources", "Images");
+                var formCollection = await Request.ReadFormAsync();
+                var file = formCollection.Files.First();
+
+                var folderName = Path.Combine("Resources", "ProductImg");
                 var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
                 if (file.Length > 0)
                 {

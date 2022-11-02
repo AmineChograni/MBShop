@@ -17,5 +17,8 @@ namespace MBShopBE.Context
         public DbSet<Group> Groups { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Taille> Tailles { get; set; }
+        public DbSet<ProdImage> ProdImages { get; set; }
+        public DbSet<MImage> MImages { get; set; }
+
     }
 }

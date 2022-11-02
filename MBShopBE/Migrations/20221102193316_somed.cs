@@ -2,7 +2,7 @@
 
 namespace MBShopBE.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class somed : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,12 +47,12 @@ namespace MBShopBE.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Label = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sold = table.Column<bool>(type: "bit", nullable: false),
                     New = table.Column<bool>(type: "bit", nullable: false),
                     Price = table.Column<float>(type: "real", nullable: false),
                     PriceSold = table.Column<float>(type: "real", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -71,7 +71,8 @@ namespace MBShopBE.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Label = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Telephone = table.Column<int>(type: "int", nullable: false),
                     TelephoneValidation = table.Column<int>(type: "int", nullable: false),
                     Adresse = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -108,6 +109,46 @@ namespace MBShopBE.Migrations
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MImages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MImages", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MImages_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProdImages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProdImages", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProdImages_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -166,6 +207,16 @@ namespace MBShopBE.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_MImages_ProductId",
+                table: "MImages",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProdImages_ProductId",
+                table: "ProdImages",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",
                 table: "Products",
                 column: "CategoryId");
@@ -188,6 +239,12 @@ namespace MBShopBE.Migrations
 
             migrationBuilder.DropTable(
                 name: "Couleurs");
+
+            migrationBuilder.DropTable(
+                name: "MImages");
+
+            migrationBuilder.DropTable(
+                name: "ProdImages");
 
             migrationBuilder.DropTable(
                 name: "Tags");

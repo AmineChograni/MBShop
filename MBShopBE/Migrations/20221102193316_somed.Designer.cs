@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MBShopBE.Migrations
 {
     [DbContext(typeof(MbDbContext))]
-    [Migration("20221102180457_ImagesCreate")]
-    partial class ImagesCreate
+    [Migration("20221102193316_somed")]
+    partial class somed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -114,7 +114,7 @@ namespace MBShopBE.Migrations
                     b.ToTable("Groups");
                 });
 
-            modelBuilder.Entity("MBShopBE.Models.Image", b =>
+            modelBuilder.Entity("MBShopBE.Models.MImage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -131,17 +131,17 @@ namespace MBShopBE.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Image");
+                    b.ToTable("MImages");
                 });
 
-            modelBuilder.Entity("MBShopBE.Models.MImage", b =>
+            modelBuilder.Entity("MBShopBE.Models.ProdImage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Image")
+                    b.Property<string>("ImageURL")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProductId")
@@ -149,10 +149,9 @@ namespace MBShopBE.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId")
-                        .IsUnique();
+                    b.HasIndex("ProductId");
 
-                    b.ToTable("MImage");
+                    b.ToTable("ProdImages");
                 });
 
             modelBuilder.Entity("MBShopBE.Models.Product", b =>
@@ -166,6 +165,9 @@ namespace MBShopBE.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageURL")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Label")
@@ -259,10 +261,10 @@ namespace MBShopBE.Migrations
                         .HasForeignKey("ProductId");
                 });
 
-            modelBuilder.Entity("MBShopBE.Models.Image", b =>
+            modelBuilder.Entity("MBShopBE.Models.MImage", b =>
                 {
                     b.HasOne("MBShopBE.Models.Product", "Product")
-                        .WithMany("Images")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -270,11 +272,11 @@ namespace MBShopBE.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("MBShopBE.Models.MImage", b =>
+            modelBuilder.Entity("MBShopBE.Models.ProdImage", b =>
                 {
                     b.HasOne("MBShopBE.Models.Product", "Product")
-                        .WithOne("MImage")
-                        .HasForeignKey("MBShopBE.Models.MImage", "ProductId")
+                        .WithMany("ProdImages")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -320,9 +322,7 @@ namespace MBShopBE.Migrations
                 {
                     b.Navigation("Couleurs");
 
-                    b.Navigation("Images");
-
-                    b.Navigation("MImage");
+                    b.Navigation("ProdImages");
 
                     b.Navigation("Tags");
 
