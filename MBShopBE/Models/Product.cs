@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 
 namespace MBShopBE.Models
@@ -19,6 +20,7 @@ namespace MBShopBE.Models
         public ICollection<Tag> Tags { get; set; }
         public string ImageURL { get; set; }
         public ICollection<ProdImage> ProdImages { get; set; }
+        public DateTime Date { get; set; }
 
     }
 }

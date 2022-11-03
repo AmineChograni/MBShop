@@ -4,14 +4,16 @@ using MBShopBE.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MBShopBE.Migrations
 {
     [DbContext(typeof(MbDbContext))]
-    partial class MbDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221103200357_DateProduct")]
+    partial class DateProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
