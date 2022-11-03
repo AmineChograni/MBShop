@@ -1,4 +1,6 @@
-﻿namespace MBShopBE.Models
+﻿using System;
+
+namespace MBShopBE.Models
 {
     public class Commande
     {
@@ -12,5 +14,6 @@
         public string CodePostal { get; set; }
         public int ProductId { get; set; }
         public Product Product { get; set; }
+        public DateTime Date { get; set; }
     }
 }
