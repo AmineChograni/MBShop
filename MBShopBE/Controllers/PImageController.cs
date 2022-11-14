@@ -48,6 +48,9 @@ namespace MBShopBE.Controllers
                     var dict = Request.Form.ToDictionary(x => x.Key, x => x.Value.ToString());
                     pimage.ProductId = Int32.Parse(dict["ProductId"]);
 
+                    var product = await _context.Products.FindAsync(pimage.ProductId);
+                    product.ImageURL = pimage.ImageURL;
+
                     _context.MImages.Add(pimage);
                     await _context.SaveChangesAsync();
                     CreatedAtAction("GetMImage", new { id = pimage.Id }, pimage);
