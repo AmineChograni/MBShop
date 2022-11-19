@@ -39,6 +39,27 @@ namespace MBShopBE.Controllers
                 return NotFound();
             }
 
+            //var prodImages = _context.ProdImages.ToList();
+
+
+
+            var products = _context.Products.ToList();
+            var prodImages = _context.ProdImages.ToList();
+            foreach (var product in products)
+            {
+                if (product.CategoryId == id)
+                {
+                    foreach (var prodImage in prodImages)
+                    {
+                        if (prodImage.ProductId == product.Id)
+                        {
+                            product.ProdImages.Add(prodImage);
+                        }
+                    }
+                    category.Products.Add(product);
+                }
+            }
+
             return category;
         }
 

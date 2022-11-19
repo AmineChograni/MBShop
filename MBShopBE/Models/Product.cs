@@ -14,7 +14,6 @@ namespace MBShopBE.Models
         public float Price { get; set; }
         public float PriceSold { get; set; }
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
         public ICollection<Taille> Tailles { get; set; }
         public ICollection<Couleur> Couleurs { get; set; }
         public ICollection<Tag> Tags { get; set; }
