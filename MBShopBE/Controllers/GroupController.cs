@@ -39,6 +39,16 @@ namespace MBShopBE.Controllers
                 return NotFound();
             }
 
+            var categories = _context.Categories.ToList();
+
+            foreach (var category in categories)
+            {
+                if (category.GroupId == id)
+                {
+                    group.Categories.Add(category);
+                }
+            }
+
             return @group;
         }
 

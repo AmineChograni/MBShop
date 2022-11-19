@@ -8,7 +8,6 @@ namespace MBShopBE.Models
         public int Id { get; set; }
         public string Label { get; set; }
         public int GroupId { get; set; }
-        public Group Group { get; set; }
         public ICollection<Product> Products { get; set; }
     }
 }
