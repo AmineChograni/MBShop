@@ -39,6 +39,16 @@ namespace MBShopBE.Controllers
                 return NotFound();
             }
 
+            var prodImages = _context.ProdImages.ToList();
+
+            foreach(var prodImage in prodImages)
+            {
+                if(prodImage.ProductId == id)
+                {
+                    product.ProdImages.Add(prodImage);
+                }
+            }
+
             return product;
         }
 
@@ -74,6 +84,7 @@ namespace MBShopBE.Controllers
         }
 
         // POST: api/Product
+
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Product>> PostProduct(Product product)
