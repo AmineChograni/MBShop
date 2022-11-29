@@ -11,6 +11,11 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
 
 @NgModule({
@@ -24,7 +29,12 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
     NzInputNumberModule,
     NzButtonModule,
     NzIconModule,
-    NzTabsModule
+    NzTabsModule,
+    NzCardModule,
+    NzBadgeModule,
+    NzPageHeaderModule,
+    NzDropDownModule,
+    NzSelectModule
     
   ]
 })
