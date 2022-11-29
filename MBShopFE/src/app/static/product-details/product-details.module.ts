@@ -10,6 +10,7 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     NzInputNumberModule,
     NzButtonModule,
     NzIconModule,
+    NzTabsModule
     
   ]
 })
