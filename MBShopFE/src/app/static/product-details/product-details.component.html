@@ -30,28 +30,28 @@
                 <!--label-->
                 <h1 class="label">Cody – Baskets en Noir</h1>
                 <!--price-->
-                <h3 class="price">299,00 DH</h3>
+                <h2 class="price">299,00 DH</h2>
 
-                <p>⇁ L'échange est gratuit seulement en magasin.</p>
+                
                 <!--colors-->
-                <h4>Colors : </h4>
+                <h3>Couleur : </h3>
                 <div nz-row nzJustify="start">
-                    <div nz-col nzSpan="2">
-                        <div style="background-color: #cfc ; width: 30px;height: 30px; border: 1px solid rgb(0, 0, 0);"></div>
+                    <div>
+                        <div class="color-block" style="background-color: #cfc ; "></div>
                     </div>
-                    <div nz-col nzSpan="2">
-                        <div style="background-color: rgb(207, 23, 23) ; width: 30px;height: 30px; border: 1px solid rgb(0, 0, 0);"></div>
+                    <div>
+                        <div class="color-block" style="background-color: rgb(207, 23, 23) ; "></div>
                     </div>
-                    <div nz-col nzSpan="2">
-                        <div style="background-color: rgb(18, 50, 214) ; width: 30px;height: 30px; border: 1px solid rgb(0, 0, 0);"></div>
+                    <div>
+                        <div class="color-block" style="background-color: rgb(18, 50, 214) ; "></div>
                     </div>
                 </div>
                 <!--tailles-->
-                <h4>pointure : </h4>
+                <h3>Pointure : </h3>
                 <div nz-row nzJustify="start">
-                        <div style=" width: 30px;height: 30px; border: 1px solid rgb(0, 0, 0); margin-right: 5px;">43</div>
-                        <div style=" width: 30px;height: 30px; border: 1px solid rgb(0, 0, 0); margin-right: 5px;">42</div>
-                        <div style=" width: 30px;height: 30px; border: 1px solid rgb(0, 0, 0); margin-right: 5px;">41</div>
+                        <div class="pointure-block" >43</div>
+                        <div class="pointure-block" >42</div>
+                        <div class="pointure-block" >41</div>
                 </div>
                 <div nz-row nzJustify="start">
                     <nz-input-number [(ngModel)]="demoValue" [nzMin]="1" [nzMax]="10" [nzStep]="1"></nz-input-number>
@@ -61,7 +61,7 @@
                     </button>
                     
                 </div>
-                
+                <p>⇁ L'échange est gratuit seulement en magasin.</p>
             </div>
         </div>
         <div class="line"></div>
