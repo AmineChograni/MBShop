@@ -46,13 +46,16 @@
                         <div class="color-block" style="background-color: rgb(18, 50, 214) ; "></div>
                     </div>
                 </div>
+
                 <!--tailles-->
                 <h3>Pointure : </h3>
-                <div nz-row nzJustify="start">
-                        <div class="pointure-block" >43</div>
-                        <div class="pointure-block" >42</div>
-                        <div class="pointure-block" >41</div>
-                </div>
+                <nz-radio-group [(ngModel)]="radioValue" class="pointure">
+                    <label nz-radio-button nzValue="A">39</label>
+                    <label nz-radio-button nzValue="B">40</label>
+                    <label nz-radio-button nzValue="C">41</label>
+                    <label nz-radio-button nzValue="D">42</label>
+                </nz-radio-group>
+
                 <div nz-row nzJustify="start">
                     <nz-input-number [(ngModel)]="demoValue" [nzMin]="1" [nzMax]="10" [nzStep]="1"></nz-input-number>
                     <button nz-button nzType="primary">

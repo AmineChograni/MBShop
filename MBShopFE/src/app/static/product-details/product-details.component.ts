@@ -9,11 +9,13 @@ import { FormControl } from '@angular/forms';
 export class ProductDetailsComponent implements OnInit {
 
   demoValue = 1;
+  radioValue = 'A';
 
   constructor() { }
   
 
   ngOnInit(): void {
+    
   }
 
 }
