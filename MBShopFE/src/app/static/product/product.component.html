@@ -33,10 +33,12 @@
             <div nz-col nzSpan="5">
                 <nz-page-header class="site-page-header select-header" >
                     <nz-breadcrumb nz-page-header-breadcrumb>
-                        <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person" (ngModel)="selectedValue">
-                            <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
-                            <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
-                            <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+                        <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Tri par défaut" (ngModel)="selectedValue">
+                            <nz-option nzLabel="Tri par défaut" nzValue="jack"></nz-option>
+                            <nz-option nzLabel="Tri par popularité" nzValue="jack"></nz-option>
+                            <nz-option nzLabel="Tri du plus récent au plus ancien" nzValue="jack"></nz-option>
+                            <nz-option nzLabel="Tri par tarif croissant" nzValue="lucy"></nz-option>
+                            <nz-option nzLabel="Tri par tarif décroissant" nzValue="tom"></nz-option>
                         </nz-select>
                     </nz-breadcrumb>
                 </nz-page-header>
@@ -45,18 +47,21 @@
         <div class="line"></div>
         <div nz-row nzJustify="start" class="select-section">
             <div nz-col nzSpan="9">
-                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person" (ngModel)="selectedColorValue">
-                    <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
-                    <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
-                    <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Filtrer par couleur" (ngModel)="selectedColorValue">
+                    <nz-option nzLabel="Argenté" nzValue="jack"></nz-option>
+                    <nz-option nzLabel="Beige" nzValue="lucy"></nz-option>
+                    <nz-option nzLabel="Blanc" nzValue="tom"></nz-option>
+                    <nz-option nzLabel="Blanc cassé" nzValue="tom"></nz-option>
+                    <nz-option nzLabel="Blanc1" nzValue="tom"></nz-option>
+                    <nz-option nzLabel="Bleu" nzValue="tom"></nz-option>
                 </nz-select>
             </div>
             <div nz-col nzSpan="1"></div>
             <div nz-col nzSpan="9">
-                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person" (ngModel)="selectedCategoriesValue">
-                    <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
-                    <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
-                    <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="CATEGORIES" (ngModel)="selectedCategoriesValue">
+                    <nz-option nzLabel="Baskets Femmes" nzValue="jack"></nz-option>
+                    <nz-option nzLabel="Chaussette femme" nzValue="lucy"></nz-option>
+                    <nz-option nzLabel="Bottes et cuissardes" nzValue="tom"></nz-option>
                 </nz-select>
             </div>
             <div nz-col nzSpan="1"></div>
@@ -65,6 +70,72 @@
             </div>
         </div>
         <div class="line"></div>
+        <div nz-row nzJustify="space-between">
+            <!--cards-->
+            <div nz-col nzSpan="5"  >
+                <nz-ribbon nzText="New" >
+                    <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate3" (mouseover)="show = true" (mouseout)="show = false" >
+                        <nz-card-meta
+                          nzTitle="some title"
+                        ></nz-card-meta>
+                        <div nz-row nzJustify="start" *ngIf='show'>
+                            <div nz-col nzSpan="4" class="squir-size">36</div>
+                            <div nz-col nzSpan="4" class="squir-size">38</div>
+                            <div nz-col nzSpan="4" class="squir-size">40</div>
+                            <div nz-col nzSpan="4" class="squir-size">41</div>
+                            <div nz-col nzSpan="4" class="squir-size">42</div>
+                        </div>
+                        <h4 class="PPrice">860 MAD</h4>
+                        <h4 class="OldPrice">860 MAD</h4>
+                    </nz-card>
+                </nz-ribbon>
+
+                <ng-template #coverTemplate>
+                    <img alt="example" src="../../../assets/images/Cprod1.jpg" />
+                </ng-template>
+            </div>
+            <div nz-col nzSpan="5"  >
+                <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate4" >
+                    <nz-card-meta
+                      nzTitle="some title"
+                    ></nz-card-meta>
+                    <h4 class="PPrice">860 MAD</h4>
+                    <h4 class="OldPrice">860 MAD</h4>
+                    
+                </nz-card>
+                <ng-template #coverTemplate2>
+                    <img alt="example" src="../../../assets/images/Cprod2.jfif" />
+                </ng-template>
+            </div>
+            <div nz-col nzSpan="5"  >
+                <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate3" >
+                    <nz-card-meta
+                      nzTitle="some title"
+                    ></nz-card-meta>
+                    <h4 class="PPrice">860 MAD</h4>
+                    
+                </nz-card>
+                <ng-template #coverTemplate3>
+                    <img alt="example" src="../../../assets/images/Cprod3.jpg" />
+                </ng-template>
+            </div>
+            <div nz-col nzSpan="5"  >
+                <nz-ribbon nzText="-50%" nzColor="#f0e922">
+                    <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate4" >
+                        <nz-card-meta
+                          nzTitle="some title"
+                        ></nz-card-meta>
+                        <h4 class="PPrice">860 MAD</h4>
+                        
+                    </nz-card>
+                </nz-ribbon>
+
+                <ng-template #coverTemplate4>
+                    <img alt="example" src="../../../assets/images/Cprod4.jpg" />
+                </ng-template>
+            </div>
+            <!--end cards-->
+        </div>
         <div nz-row nzJustify="space-between">
             <!--cards-->
             <div nz-col nzSpan="5"  >

@@ -10,6 +10,7 @@ export class ProductComponent implements OnInit {
   selectedValue = null;
   selectedColorValue=null;
   selectedCategoriesValue=null;
+  show = false;
 
   constructor() { }
 

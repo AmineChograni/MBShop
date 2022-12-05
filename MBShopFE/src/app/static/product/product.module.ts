@@ -12,6 +12,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 @NgModule({
   declarations: [ProductComponent],
@@ -26,7 +27,8 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
     NzSelectModule,
     NzCardModule,
     NzBadgeModule,
-    NzPaginationModule
+    NzPaginationModule,
+    NzRadioModule
   ]
 })
 export class ProductModule { }
