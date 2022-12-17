@@ -57,6 +57,15 @@ namespace MBShopBE.Controllers
                 }
             }
 
+            var colors = _context.Couleurs.ToList();
+            foreach (var color in colors)
+            {
+                if (color.ProductId == id)
+                {
+                    product.Couleurs.Add(color);
+                }
+            }
+
 
             return product;
         }
