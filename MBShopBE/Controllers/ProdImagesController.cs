@@ -37,6 +37,7 @@ namespace MBShopBE.Controllers
 
                 var dict = Request.Form.ToDictionary(x => x.Key, x => x.Value.ToString());
                 var prodId = Int32.Parse(dict["productId"]);
+                var color = dict["productId"];
                 if (files.Count > 0)
                 {
                     List<ProdImage> prodImages = new List<ProdImage>();
@@ -53,6 +54,7 @@ namespace MBShopBE.Controllers
                         var pimage = new ProdImage();
                         pimage.ImageURL = dbPath;
                         pimage.ProductId = prodId;
+                        pimage.Color = color;
 
                         prodImages.Add(pimage);
 
