@@ -40,7 +40,6 @@ namespace MBShopBE.Controllers
             }
 
             var prodImages = _context.ProdImages.ToList();
-
             foreach(var prodImage in prodImages)
             {
                 if(prodImage.ProductId == id)
@@ -48,6 +47,16 @@ namespace MBShopBE.Controllers
                     product.ProdImages.Add(prodImage);
                 }
             }
+
+            var prodTailles = _context.Tailles.ToList();
+            foreach (var prodTaille in prodTailles)
+            {
+                if (prodTaille.ProductId == id)
+                {
+                    product.Tailles.Add(prodTaille);
+                }
+            }
+
 
             return product;
         }
