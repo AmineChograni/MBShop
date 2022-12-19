@@ -1,5 +1,7 @@
-import { Tailles } from "./Tailles";
-import { Couleurs } from "./Couleurs";
+import { Taille } from "./Taille";
+import { Couleur } from "./Couleur";
+import { Tag } from "./Tag";
+import { ProdImage } from "./ProdImage";
 
 export class Product {
     id?: Number;
@@ -10,11 +12,11 @@ export class Product {
     price: Number;
     priceSold: Number;
     categoryId: Number;
-    tailles:Tailles[];
-    couleurs:Couleurs[];
-    tags:Tags[];
+    tailles:Taille[];
+    couleurs:Couleur[];
+    tags:Tag[];
     imageURL: String;
-    prodImages:ProdImages[];
+    prodImages:ProdImage[];
     date: Date;
 
     constructor(id: Number, label: String, description: String, sold: Boolean, neww: boolean ,price: Number, priceSold: Number, categoryId: Number, imageURL: String){

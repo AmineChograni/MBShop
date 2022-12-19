@@ -1,4 +1,4 @@
-export class Couleurs{
+export class Couleur{
     id?:Number;
     label: String;
     productId: Number;

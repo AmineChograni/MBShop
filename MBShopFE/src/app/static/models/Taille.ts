@@ -1,4 +1,4 @@
-export class Tailles{
+export class Taille{
     id?:Number;
     label: String;
     productId: Number;
