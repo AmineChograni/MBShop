@@ -1,4 +1,4 @@
-export class Tailles{
+export class Couleurs{
     id?:Number;
     label: String;
     productId: Number;

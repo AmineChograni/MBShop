@@ -1,4 +1,5 @@
 import { Tailles } from "./Tailles";
+import { Couleurs } from "./Couleurs";
 
 export class Product {
     id?: Number;
