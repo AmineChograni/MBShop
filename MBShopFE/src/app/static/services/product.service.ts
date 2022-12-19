@@ -12,5 +12,13 @@ const httpOptions={
     providedIn: 'root'
 })
 export class ProductService{
-    
+    productApi=environment.baseUrl;
+
+    products:Product[];
+
+    constructor(private httpClient:HttpClient) { }
+
+    getProducts(): Observable<any>{
+        return this.httpClient.get<any>(`${this.productApi}/product`)
+    }
 }

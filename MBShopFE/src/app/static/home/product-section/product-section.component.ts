@@ -1,3 +1,4 @@
+import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -31,7 +32,7 @@ export class ProductSectionComponent implements OnInit {
     { "PTitle": "Fatima" ,"PPrice":321, "imgURL": "../../../../assets/images/Cprod5.jpg" },
   ];
 
-  constructor() { }
+  constructor(private ProductService: ProductService) { }
 
   ngOnInit(): void {
   }
