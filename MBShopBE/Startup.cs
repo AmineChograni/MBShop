@@ -50,6 +50,17 @@ namespace MBShopBE
                 o.MemoryBufferThreshold = int.MaxValue;
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", p =>
+                {
+                    p.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+                });
+            });
+            services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +71,7 @@ namespace MBShopBE
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MBShopBE v1"));
+                app.UseCors("AllowAll");
             }
 
             app.UseHttpsRedirection();
@@ -80,6 +92,7 @@ namespace MBShopBE
                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
                 RequestPath = new PathString("/Resources")
             });
+
         }
     }
 }

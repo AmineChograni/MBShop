@@ -1,3 +1,4 @@
+import { Product } from './../../models/Product';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -32,9 +33,17 @@ export class ProductSectionComponent implements OnInit {
     { "PTitle": "Fatima" ,"PPrice":321, "imgURL": "../../../../assets/images/Cprod5.jpg" },
   ];
 
-  constructor(private ProductService: ProductService) { }
+  products: Product[];
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+
+    this.productService.getProducts().subscribe(data => {
+      this.products=data;
+      console.log(this.products);
+    })
+
   }
 
 }
