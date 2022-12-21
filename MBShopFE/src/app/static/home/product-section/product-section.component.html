@@ -8,15 +8,15 @@
                 <div class="line"></div>
                 <div nz-row nzJustify="space-between">
                     <!-- card -->
-                    <div nz-col nzSpan="4" *ngFor="let prod of Hprod">
+                    <div nz-col nzSpan="4" *ngFor="let prod of products | slice:0:5">
                         <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
                             <nz-card-meta
-                              nzTitle="{{prod.PTitle}}"
+                              nzTitle="{{prod.label}}"
                             ></nz-card-meta>
-                            <h4 class="PPrice">{{prod.PPrice}} MAD</h4>
+                            <h4 class="PPrice">{{prod.price}} MAD</h4>
                         </nz-card>
                         <ng-template #coverTemplate>
-                            <img alt="example" src="{{prod.imgURL}}" />
+                            <img alt="example" [src]="createImgPath(prod.imageURL)" />
                         </ng-template>
                     </div>
                     <!-- end card -->
