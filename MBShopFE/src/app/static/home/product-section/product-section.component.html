@@ -8,7 +8,7 @@
                 <div class="line"></div>
                 <div nz-row nzJustify="space-between">
                     <!-- card -->
-                    <div nz-col nzSpan="4" *ngFor="let prod of products | slice:0:5">
+                    <div nz-col nzSpan="4" *ngFor="let prod of prodH | slice:0:5">
                         <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
                             <nz-card-meta
                               nzTitle="{{prod.label}}"
@@ -23,12 +23,12 @@
                 </div>
                 <p class="vop"><a routerLink='#'>Voir plus</a></p>
             </div>
-
+            <!-- 
             <div class="products">
                 <p class="art-title">Femmes</p>
                 <div class="line"></div>
                 <div nz-row nzJustify="space-between">
-                    <!-- card -->
+
                     <div nz-col nzSpan="4" *ngFor="let prod of Fprod" >
                         <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
                             <nz-card-meta
@@ -40,26 +40,25 @@
                             <img alt="example" src="{{prod.imgURL}}" />
                         </ng-template>
                     </div>
-                    <!-- end card -->
+                    
                 </div>
                 <p class="vop"><a routerLink='#'>Voir plus</a></p>
-            </div>
-
+            </div>-->
+            
             <div class="products">
                 <p class="art-title">Enfants</p>
                 <div class="line"></div>
                 <div nz-row nzJustify="space-between">
                     <!-- card -->
-                    <div nz-col nzSpan="4" *ngFor="let prod of Cprod">
+                    <div nz-col nzSpan="4" *ngFor="let prod of prodE | slice:0:5">
                         <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
                             <nz-card-meta
-                              nzTitle="{{prod.PTitle}}"
+                              nzTitle="{{prod.label}}"
                             ></nz-card-meta>
-                            <h4 class="PPrice">{{prod.PPrice}} MAD</h4>
+                            <h4 class="PPrice">{{prod.price}} MAD</h4>
                         </nz-card>
-                        
                         <ng-template #coverTemplate>
-                            <img alt="example" src="{{prod.imgURL}}" />
+                            <img alt="example" [src]="createImgPath(prod.imageURL)" />
                         </ng-template>
                     </div>
                     <!-- end card -->
