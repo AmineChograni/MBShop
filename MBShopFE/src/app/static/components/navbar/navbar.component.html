@@ -12,23 +12,18 @@
       <li>
         <a href="#!">HOMME</a>
         <ul class="nav-dropdown">
-          <li><a href="#!">Classic</a></li>
-          <li><a href="#!">Mocassin</a></li>
-          <li><a href="#!">Sandale</a></li>
+            <li *ngFor="let caty of categoryH"><a href="#!"> {{ caty.label }} </a></li>
         </ul>
       </li>
       <li>
         <a href="#!">FEMME</a>
         <ul class="nav-dropdown">
-          <li><a href="#!">Chaussure</a></li>
-          <li><a href="#!">Sandale</a></li>
         </ul>
       </li>
       <li>
         <a href="#!">ENFANT</a>
         <ul class="nav-dropdown">
-          <li><a href="#!">Fille</a></li>
-          <li><a href="#!">Garcon</a></li>
+          <li *ngFor="let caty of categoryE"><a href="#!"> {{ caty.label }} </a></li>
         </ul>
       </li>
       <li>

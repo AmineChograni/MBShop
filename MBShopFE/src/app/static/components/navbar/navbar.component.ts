@@ -1,5 +1,7 @@
+import { Category } from './../../models/Category';
 import { Component, OnInit } from '@angular/core';
 import * as $ from "jquery";
+import { ProductService } from './../../services/product.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +10,11 @@ import * as $ from "jquery";
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private productService: ProductService) { }
+
+  categoryH : Category[]=[];
+  categoryE : Category[]=[];
 
   ngOnInit(): void {
     
@@ -33,6 +39,16 @@ export class NavbarComponent implements OnInit {
           this.classList.toggle('active')
         })
       })
+
+      this.productService.getCategoriesByGroupId(4).subscribe(data => {
+        this.categoryH=data.categories;
+        console.log(this.categoryH);
+      })
+
+      this.productService.getCategoriesByGroupId(5).subscribe(data => {
+        this.categoryE=data.categories;
+      })
+  
   }
 
 }
