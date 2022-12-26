@@ -62,7 +62,7 @@
             <!--cards-->
             <div *ngFor="let prod of products | slice:0:5" nz-col nzSpan="5"  >
                 <nz-ribbon nzText="New" >
-                    <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" (mouseover)="show = true" (mouseout)="show = false" >
+                    <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" (mouseover)="show = true" (mouseout)="show = false" routerLink='/product/{{prod.id}}'>
                         <nz-card-meta
                           nzTitle="{{prod.label}}"
                         ></nz-card-meta>

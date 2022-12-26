@@ -28,4 +28,8 @@ export class ProductService{
     getProductByCategoriesId(categoryId: Number): Observable<any>{
         return this.httpClient.get<any>(`${this.productApi}/categories/${categoryId}`)
     }
+
+    getProductById(productId:Number): Observable<any>{
+        return this.httpClient.get<any>(`${this.productApi}/product/${productId}`)
+    }
 }
