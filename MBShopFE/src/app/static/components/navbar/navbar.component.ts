@@ -42,7 +42,6 @@ export class NavbarComponent implements OnInit {
 
       this.productService.getCategoriesByGroupId(4).subscribe(data => {
         this.categoryH=data.categories;
-        console.log(this.categoryH);
       })
 
       this.productService.getCategoriesByGroupId(5).subscribe(data => {

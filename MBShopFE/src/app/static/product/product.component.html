@@ -15,21 +15,9 @@
     <div nz-col nzSpan="1"></div>
     <div nz-col nzSpan="22">
         <div nz-row nzJustify="start" class="head">
-            <div nz-col nzSpan="8">
-                <nz-page-header class="site-page-header">
-                    <nz-breadcrumb nz-page-header-breadcrumb>
-                        <a href="#">Accueil</a> / <a href="#">Chaussures Femmes</a> / <a href="#" style="font-weight: bold ;">Baskets Femmes</a>
-                    </nz-breadcrumb>
-                </nz-page-header>
-            </div>
-            <div nz-col nzSpan="8"></div>
-            <div nz-col nzSpan="3">
-                <nz-page-header class="site-page-header">
-                    <nz-breadcrumb nz-page-header-breadcrumb>
-                        <span style="font-weight: bold ;">Show: </span> <a href="#"> 6</a> / <a href="#">12</a> / <a href="#">24</a>
-                    </nz-breadcrumb>
-                </nz-page-header>
-            </div>
+
+            <div nz-col nzSpan="19"></div>
+
             <div nz-col nzSpan="5">
                 <nz-page-header class="site-page-header select-header" >
                     <nz-breadcrumb nz-page-header-breadcrumb>
@@ -70,13 +58,13 @@
             </div>
         </div>
         <div class="line"></div>
-        <div nz-row nzJustify="space-between">
+        <div nz-row nzJustify="space-around">
             <!--cards-->
-            <div nz-col nzSpan="5"  >
+            <div *ngFor="let prod of products | slice:0:5" nz-col nzSpan="5"  >
                 <nz-ribbon nzText="New" >
-                    <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate3" (mouseover)="show = true" (mouseout)="show = false" >
+                    <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" (mouseover)="show = true" (mouseout)="show = false" >
                         <nz-card-meta
-                          nzTitle="some title"
+                          nzTitle="{{prod.label}}"
                         ></nz-card-meta>
                         <div nz-row nzJustify="start" *ngIf='show'>
                             <div nz-col nzSpan="4" class="squir-size">36</div>
@@ -85,112 +73,13 @@
                             <div nz-col nzSpan="4" class="squir-size">41</div>
                             <div nz-col nzSpan="4" class="squir-size">42</div>
                         </div>
-                        <h4 class="PPrice">860 MAD</h4>
-                        <h4 class="OldPrice">860 MAD</h4>
+                        <h4 class="PPrice">{{prod.price}}</h4>
+                        <h4 class="OldPrice"></h4>
                     </nz-card>
                 </nz-ribbon>
 
                 <ng-template #coverTemplate>
-                    <img alt="example" src="../../../assets/images/Cprod1.jpg" />
-                </ng-template>
-            </div>
-            <div nz-col nzSpan="5"  >
-                <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate4" >
-                    <nz-card-meta
-                      nzTitle="some title"
-                    ></nz-card-meta>
-                    <h4 class="PPrice">860 MAD</h4>
-                    <h4 class="OldPrice">860 MAD</h4>
-                    
-                </nz-card>
-                <ng-template #coverTemplate2>
-                    <img alt="example" src="../../../assets/images/Cprod2.jfif" />
-                </ng-template>
-            </div>
-            <div nz-col nzSpan="5"  >
-                <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate3" >
-                    <nz-card-meta
-                      nzTitle="some title"
-                    ></nz-card-meta>
-                    <h4 class="PPrice">860 MAD</h4>
-                    
-                </nz-card>
-                <ng-template #coverTemplate3>
-                    <img alt="example" src="../../../assets/images/Cprod3.jpg" />
-                </ng-template>
-            </div>
-            <div nz-col nzSpan="5"  >
-                <nz-ribbon nzText="-50%" nzColor="#f0e922">
-                    <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate4" >
-                        <nz-card-meta
-                          nzTitle="some title"
-                        ></nz-card-meta>
-                        <h4 class="PPrice">860 MAD</h4>
-                        
-                    </nz-card>
-                </nz-ribbon>
-
-                <ng-template #coverTemplate4>
-                    <img alt="example" src="../../../assets/images/Cprod4.jpg" />
-                </ng-template>
-            </div>
-            <!--end cards-->
-        </div>
-        <div nz-row nzJustify="space-between">
-            <!--cards-->
-            <div nz-col nzSpan="5"  >
-                <nz-ribbon nzText="New" >
-                    <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate3" >
-                        <nz-card-meta
-                          nzTitle="some title"
-                        ></nz-card-meta>
-                        <h4 class="PPrice">860 MAD</h4>
-                        <h4 class="OldPrice">860 MAD</h4>
-                    </nz-card>
-                </nz-ribbon>
-
-                <ng-template #coverTemplate>
-                    <img alt="example" src="../../../assets/images/Cprod1.jpg" />
-                </ng-template>
-            </div>
-            <div nz-col nzSpan="5"  >
-                <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate4" >
-                    <nz-card-meta
-                      nzTitle="some title"
-                    ></nz-card-meta>
-                    <h4 class="PPrice">860 MAD</h4>
-                    <h4 class="OldPrice">860 MAD</h4>
-                    
-                </nz-card>
-                <ng-template #coverTemplate2>
-                    <img alt="example" src="../../../assets/images/Cprod2.jfif" />
-                </ng-template>
-            </div>
-            <div nz-col nzSpan="5"  >
-                <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate3" >
-                    <nz-card-meta
-                      nzTitle="some title"
-                    ></nz-card-meta>
-                    <h4 class="PPrice">860 MAD</h4>
-                    
-                </nz-card>
-                <ng-template #coverTemplate3>
-                    <img alt="example" src="../../../assets/images/Cprod3.jpg" />
-                </ng-template>
-            </div>
-            <div nz-col nzSpan="5"  >
-                <nz-ribbon nzText="-50%" nzColor="#f0e922">
-                    <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate4" >
-                        <nz-card-meta
-                          nzTitle="some title"
-                        ></nz-card-meta>
-                        <h4 class="PPrice">860 MAD</h4>
-                        
-                    </nz-card>
-                </nz-ribbon>
-
-                <ng-template #coverTemplate4>
-                    <img alt="example" src="../../../assets/images/Cprod4.jpg" />
+                    <img alt="example" [src]="createImgPath(prod.imageURL)" />
                 </ng-template>
             </div>
             <!--end cards-->
