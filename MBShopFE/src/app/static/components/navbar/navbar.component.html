@@ -12,7 +12,7 @@
       <li>
         <a href="#!">HOMME</a>
         <ul class="nav-dropdown">
-            <li *ngFor="let caty of categoryH"><a href="#!"> {{ caty.label }} </a></li>
+            <li *ngFor="let caty of categoryH"><a routerLink='/products/{{caty.id}}'> {{ caty.label }} </a></li>
         </ul>
       </li>
       <li>

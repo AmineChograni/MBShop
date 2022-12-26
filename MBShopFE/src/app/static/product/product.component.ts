@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product',
@@ -12,10 +13,11 @@ export class ProductComponent implements OnInit {
   selectedCategoriesValue=null;
   show = false;
 
-  constructor() { }
+  constructor(private titleService: Title) { }
 
 
   ngOnInit(): void {
+    this.titleService.setTitle("MBShop | Categories");
   }
 
   log(): void {
