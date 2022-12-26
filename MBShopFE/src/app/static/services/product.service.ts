@@ -25,4 +25,7 @@ export class ProductService{
     getCategoriesByGroupId(groupId: Number): Observable<any>{
         return this.httpClient.get<any>(`${this.productApi}/group/${groupId}`)
     }
+    getProductByCategoriesId(categoryId: Number): Observable<any>{
+        return this.httpClient.get<any>(`${this.productApi}/categories/${categoryId}`)
+    }
 }
