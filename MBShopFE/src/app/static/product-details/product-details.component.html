@@ -5,17 +5,8 @@
             <div nz-col nzSpan="10">
                 <img [src]="createImgPath(product.imageURL)" alt="" srcset="" class="bigImage">
                 <div nz-row nzJustify="space-between">
-                    <div nz-col nzSpan="5">
-                        <img src="../../../assets/images/hommecla.jpg" alt="" srcset="">
-                    </div>
-                    <div nz-col nzSpan="5">
-                        <img src="../../../assets/images/hommecla.jpg" alt="" srcset="">
-                    </div>
-                    <div nz-col nzSpan="5">
-                        <img src="../../../assets/images/hommecla.jpg" alt="" srcset="">
-                    </div>
-                    <div nz-col nzSpan="5">
-                        <img src="../../../assets/images/hommecla.jpg" alt="" srcset="">
+                    <div nz-col nzSpan="5"  *ngFor="let prodImg of prodImages | slice:0:4">
+                        <img nz-image [nzSrc]="createImgPath(prodImg.imageURL)" alt="" srcset="">
                     </div>
                 </div>
             </div>
@@ -29,17 +20,10 @@
                 
                 <!--colors-->
                 <h3>Couleur : </h3>
-                <div nz-row nzJustify="start">
-                    <div>
-                        <div class="color-block" style="background-color: #cfc ; "></div>
-                    </div>
-                    <div>
-                        <div class="color-block" style="background-color: rgb(207, 23, 23) ; "></div>
-                    </div>
-                    <div>
-                        <div class="color-block" style="background-color: rgb(18, 50, 214) ; "></div>
-                    </div>
-                </div>
+
+                <nz-radio-group [(ngModel)]="radioColorValue" class="couleur">
+                    <label *ngFor="let color of colors" nz-radio-button nzValue="{{color.label}}" [ngStyle]="{'background-color': color.codeColor}"></label>
+                </nz-radio-group>
 
                 <!--tailles-->
                 <h3>Pointure : </h3>

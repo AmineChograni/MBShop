@@ -17,6 +17,7 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzImageModule } from 'ng-zorro-antd/image';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
     NzPageHeaderModule,
     NzDropDownModule,
     NzSelectModule,
-    NzRadioModule
+    NzRadioModule,
+    NzImageModule
     
   ]
 })

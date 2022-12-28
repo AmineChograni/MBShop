@@ -6,6 +6,8 @@ import { Product } from './../models/Product';
 import { ProductService } from './../services/product.service';
 import { Category } from './../models/Category';
 import { Taille } from '../models/Taille';
+import { Couleur } from '../models/Couleur';
+import { ProdImage } from '../models/ProdImage';
 
 @Component({
   selector: 'app-product-details',
@@ -16,6 +18,7 @@ export class ProductDetailsComponent implements OnInit {
 
   demoValue = 1;
   radioPointureValue = 'A';
+  radioColorValue='A';
 
   categoryId: Number;
   productId:Number;
@@ -23,6 +26,8 @@ export class ProductDetailsComponent implements OnInit {
   products: Product[] = [];
   category: Category;
   tailles:Taille[]=[];
+  colors: Couleur[]=[];
+  prodImages:ProdImage[]=[];
   
 
   constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService) { }
@@ -41,14 +46,11 @@ export class ProductDetailsComponent implements OnInit {
     this.productService.getProductById(this.productId).subscribe(data => {
       this.product=data;
       this.tailles=this.product.tailles;
-
-
-      
-      
-      console.log(this.product);
+      this.colors=this.product.couleurs;
+      this.prodImages=this.product.prodImages;
       
     })
-    
+
   }
 
 }
