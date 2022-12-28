@@ -3,10 +3,10 @@
     <div nz-col nzSpan="20">
         <div nz-row nzJustify="start">
             <div nz-col nzSpan="10">
-                <img [src]="createImgPath(product.imageURL)" alt="" srcset="" class="bigImage">
-                <div nz-row nzJustify="space-between">
-                    <div nz-col nzSpan="5"  *ngFor="let prodImg of prodImages | slice:0:4">
-                        <img nz-image [nzSrc]="createImgPath(prodImg.imageURL)" alt="" srcset="">
+                <img [src]="createImgPath(mainProductImage)" alt="" srcset="" class="bigImage">
+                <div nz-row nzJustify="space-around">
+                    <div nz-col nzSpan="5"  *ngFor="let prodImg of productImagesUrl | slice:0:4">
+                        <img nz-image [nzSrc]="createImgPath(prodImg)" alt="" srcset="">
                     </div>
                 </div>
             </div>
@@ -21,8 +21,8 @@
                 <!--colors-->
                 <h3>Couleur : </h3>
 
-                <nz-radio-group [(ngModel)]="radioColorValue" class="couleur">
-                    <label *ngFor="let color of colors" nz-radio-button nzValue="{{color.label}}" [ngStyle]="{'background-color': color.codeColor}"></label>
+                <nz-radio-group [(ngModel)]="radioColorValue" class="couleur" >
+                    <label *ngFor="let color of colors" nz-radio-button nzValue="{{color.label}}" [ngStyle]="{'background-color': color.codeColor}" (click)='colorSelect()'></label>
                 </nz-radio-group>
 
                 <!--tailles-->

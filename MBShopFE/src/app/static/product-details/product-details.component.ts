@@ -28,6 +28,8 @@ export class ProductDetailsComponent implements OnInit {
   tailles:Taille[]=[];
   colors: Couleur[]=[];
   prodImages:ProdImage[]=[];
+  mainProductImage:String;
+  productImagesUrl:String[]=[];
   
 
   constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService) { }
@@ -48,9 +50,26 @@ export class ProductDetailsComponent implements OnInit {
       this.tailles=this.product.tailles;
       this.colors=this.product.couleurs;
       this.prodImages=this.product.prodImages;
-      
+      this.mainProductImage=this.product.imageURL;
+      for(var image of this.prodImages){
+        this.productImagesUrl.push(image.imageURL);
+      }
+      console.log(this.productImagesUrl);
     })
 
+    
+
   }
+  colorSelect(){
+    this.productImagesUrl=[]
+    for (var image of this.prodImages) {
+      if(image.color == this.radioColorValue){
+        this.productImagesUrl.push(image.imageURL);
+      }
+    }
+    this.mainProductImage=this.productImagesUrl[0];
+
+  }
+
 
 }
