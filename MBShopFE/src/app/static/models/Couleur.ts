@@ -4,9 +4,10 @@ export class Couleur{
     codeColor:String;
     productId: Number;
 
-    constructor(id: Number, label: String, productId: Number){
+    constructor(id: Number, label: String,codeColor: String, productId: Number){
         this.id=id;
         this.label=label;
+        this.codeColor=codeColor;
         this.productId=productId;
     }
 }
