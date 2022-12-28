@@ -1,6 +1,7 @@
 export class Couleur{
     id?:Number;
     label: String;
+    codeColor:String;
     productId: Number;
 
     constructor(id: Number, label: String, productId: Number){
