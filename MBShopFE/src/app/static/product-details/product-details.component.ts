@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from './../models/Product';
 import { ProductService } from './../services/product.service';
 import { Category } from './../models/Category';
+import { Taille } from '../models/Taille';
 
 @Component({
   selector: 'app-product-details',
@@ -14,17 +15,19 @@ import { Category } from './../models/Category';
 export class ProductDetailsComponent implements OnInit {
 
   demoValue = 1;
-  radioValue = 'A';
+  radioPointureValue = 'A';
 
   categoryId: Number;
   productId:Number;
   product:Product;
   products: Product[] = [];
   category: Category;
+  tailles:Taille[]=[];
+  
 
   constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService) { }
 
-  public createImgPath = (serverPath: string) => { 
+  public createImgPath = (serverPath: String) => { 
     return `https://localhost:44353/${serverPath}`; 
   }
   
@@ -37,7 +40,9 @@ export class ProductDetailsComponent implements OnInit {
 
     this.productService.getProductById(this.productId).subscribe(data => {
       this.product=data;
-      
+      this.tailles=this.product.tailles;
+
+
       
       
       console.log(this.product);

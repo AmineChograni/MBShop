@@ -3,7 +3,7 @@
     <div nz-col nzSpan="20">
         <div nz-row nzJustify="start">
             <div nz-col nzSpan="10">
-                <img src="../../../assets/images/hommecla.jpg" alt="" srcset="" class="bigImage">
+                <img [src]="createImgPath(product.imageURL)" alt="" srcset="" class="bigImage">
                 <div nz-row nzJustify="space-between">
                     <div nz-col nzSpan="5">
                         <img src="../../../assets/images/hommecla.jpg" alt="" srcset="">
@@ -20,17 +20,11 @@
                 </div>
             </div>
             <div nz-col nzSpan="14" class="right-side">
-                <nz-breadcrumb nzSeparator=">">
-                    <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-                    <nz-breadcrumb-item>
-                      <a>Application List</a>
-                    </nz-breadcrumb-item>
-                    <nz-breadcrumb-item>An Application</nz-breadcrumb-item>
-                </nz-breadcrumb>
+                
                 <!--label-->
-                <h1 class="label">Cody – Baskets en Noir</h1>
+                <h1 class="label">{{product.label}}</h1>
                 <!--price-->
-                <h2 class="price">299,00 DH</h2>
+                <h2 class="price">{{product.price}}</h2>
 
                 
                 <!--colors-->
@@ -49,11 +43,8 @@
 
                 <!--tailles-->
                 <h3>Pointure : </h3>
-                <nz-radio-group [(ngModel)]="radioValue" class="pointure">
-                    <label nz-radio-button nzValue="A">39</label>
-                    <label nz-radio-button nzValue="B">40</label>
-                    <label nz-radio-button nzValue="C">41</label>
-                    <label nz-radio-button nzValue="D">42</label>
+                <nz-radio-group [(ngModel)]="radioPointureValue" class="pointure">
+                    <label *ngFor="let taille of tailles" nz-radio-button nzValue="{{taille.label}}">{{taille.label}}</label>
                 </nz-radio-group>
 
                 <div nz-row nzJustify="start">
