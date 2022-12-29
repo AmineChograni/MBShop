@@ -20,7 +20,6 @@ export class ProductDetailsComponent implements OnInit {
   radioPointureValue = 'A';
   radioColorValue='A';
 
-  categoryId: Number;
   productId:Number;
   product:Product;
   products: Product[] = [];
@@ -30,6 +29,7 @@ export class ProductDetailsComponent implements OnInit {
   prodImages:ProdImage[]=[];
   mainProductImage:String;
   productImagesUrl:String[]=[];
+  categoryId:Number;
   
 
   constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService) { }
@@ -44,21 +44,26 @@ export class ProductDetailsComponent implements OnInit {
     this.titleService.setTitle("MBShop | Product");
 
     this.productId =this.router.snapshot.params['id'];
-
+    
     this.productService.getProductById(this.productId).subscribe(data => {
       this.product=data;
+      this.categoryId=this.product.categoryId;
       this.tailles=this.product.tailles;
       this.colors=this.product.couleurs;
       this.prodImages=this.product.prodImages;
+
       this.mainProductImage=this.product.imageURL;
       for(var image of this.prodImages){
         this.productImagesUrl.push(image.imageURL);
       }
-      console.log(this.productImagesUrl);
+      
+      
+      this.getRelativeProducts(this.categoryId);
     })
 
-    
 
+    
+    
   }
   colorSelect(){
     this.productImagesUrl=[]
@@ -68,7 +73,13 @@ export class ProductDetailsComponent implements OnInit {
       }
     }
     this.mainProductImage=this.productImagesUrl[0];
+  }
 
+  getRelativeProducts(cateId:Number){
+    this.productService.getProductByCategoriesId(cateId).subscribe(data => {
+      this.products=data.products;
+      console.log(this.products);
+    })
   }
 
 
