@@ -45,7 +45,15 @@ export class ProductDetailsComponent implements OnInit {
 
     this.productId =this.router.snapshot.params['id'];
     
-    this.productService.getProductById(this.productId).subscribe(data => {
+    this.getProduct(this.productId)
+
+
+    
+    
+  }
+
+  getProduct(prodId:Number){
+    this.productService.getProductById(prodId).subscribe(data => {
       this.product=data;
       this.categoryId=this.product.categoryId;
       this.tailles=this.product.tailles;
@@ -53,6 +61,7 @@ export class ProductDetailsComponent implements OnInit {
       this.prodImages=this.product.prodImages;
 
       this.mainProductImage=this.product.imageURL;
+      this.productImagesUrl=[]
       for(var image of this.prodImages){
         this.productImagesUrl.push(image.imageURL);
       }
@@ -60,11 +69,8 @@ export class ProductDetailsComponent implements OnInit {
       
       this.getRelativeProducts(this.categoryId);
     })
-
-
-    
-    
   }
+
   colorSelect(){
     this.productImagesUrl=[]
     for (var image of this.prodImages) {
@@ -80,6 +86,15 @@ export class ProductDetailsComponent implements OnInit {
       this.products=data.products;
       console.log(this.products);
     })
+  }
+
+  goPaiment(){
+    this.route.navigate(['/paiement'],{queryParams:{
+      prodImg: this.mainProductImage,
+      prodName:this.product.label,
+      prodColor:this.radioColorValue,
+      prodPrice:this.product.price
+    }});
   }
 
 

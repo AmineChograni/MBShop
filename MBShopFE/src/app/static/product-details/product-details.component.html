@@ -33,7 +33,7 @@
 
                 <div nz-row nzJustify="start">
                     <nz-input-number [(ngModel)]="demoValue" [nzMin]="1" [nzMax]="10" [nzStep]="1"></nz-input-number>
-                    <button nz-button nzType="primary">
+                    <button nz-button nzType="primary" (click)="goPaiment()">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="17" height="17" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <circle cx="6" cy="19" r="2"></circle>
@@ -81,13 +81,14 @@
             <div nz-row nzJustify="space-between">
                 <!--cards-->
                 <div nz-col nzSpan="4" *ngFor="let prod of products | slice:0:5" >
-                    
+                    <a routerLink='/product/{{prod.id}}' (click)="getProduct(prod.id)">
                         <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
                             <nz-card-meta
                               nzTitle={{prod.label}}
                             ></nz-card-meta>
                             <h4 class="PPrice">{{prod.price}} MAD</h4>
                         </nz-card>
+                    </a>
                     <ng-template #coverTemplate>
                         <img alt="example" [src]="createImgPath(prod.imageURL)" />
                     </ng-template>
