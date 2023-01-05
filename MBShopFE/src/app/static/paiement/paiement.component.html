@@ -5,7 +5,7 @@
     </div>
 
 </div>
-<div nz-row nzJustify="start">
+<div nz-row nzJustify="start" class="all">
     <div nz-col nzSpan="2"></div>
     <div nz-col nzSpan="10" class="facturation">
         <h1>DÉTAILS DE FACTURATION</h1>
@@ -62,6 +62,32 @@
     </div>
     <div nz-col nzSpan="10" class="vcommande">
         <h1>VOTRE COMMANDE</h1>
+        <div class="commandeD">
+          <img [src]="createImgPath(prodImg)" alt="" srcset="" class="prodImage">
+          <div class="line"></div>
+          <div nz-row nzJustify="space-between" class="prodD">
+            <div nz-col nzSpan="4">PRODUIT</div>
+            <div nz-col nzSpan="10">{{prodName}}</div>
+          </div>
+          <div class="line"></div>
+          <div nz-row nzJustify="space-between" class="prodD">
+            <div nz-col nzSpan="4">Pointure</div>
+            <div nz-col nzSpan="10">{{prodPoint}}</div>
+          </div>
+          <div class="line"></div>
+          <div nz-row nzJustify="space-between" class="prodD">
+            <div nz-col nzSpan="4">Couleur</div>
+            <div nz-col nzSpan="10">{{prodColor}}</div>
+          </div>
+          <div class="line"></div>
+          <div nz-row nzJustify="space-between" class="prodD" >
+            <div nz-col nzSpan="4">Total</div>
+            <div nz-col nzSpan="10">{{prodPrice}} MAD</div>
+          </div>
+        </div>
+        <h4>⇁ Paiement à la livraison.</h4>
+        <h3>Vos données personnelles seront utilisées pour le traitement de votre commande, vous accompagner au cours de votre visite du site web, et pour d’autres raisons décrites dans notre politique de confidentialité.</h3>
+
     </div>
     <div nz-col nzSpan="2"></div>
 </div>

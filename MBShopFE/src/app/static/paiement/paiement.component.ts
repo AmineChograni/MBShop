@@ -12,9 +12,15 @@ export class PaiementComponent implements OnInit {
   prodImg:String;
   prodName:String;
   prodColor:String;
+  prodPoint:Number;
   prodPrice:Number;
+  
 
   constructor(private titleService: Title,private router:ActivatedRoute,private route : Router) { }
+
+  public createImgPath = (serverPath: String) => { 
+    return `https://localhost:44353/${serverPath}`; 
+  }
 
   ngOnInit(): void {
     this.titleService.setTitle("MBShop | Paiement");
@@ -22,10 +28,10 @@ export class PaiementComponent implements OnInit {
       this.prodImg = params['prodImg'],
       this.prodName=params['prodName'],
       this.prodColor=params['prodColor'],
+      this.prodPoint=params['prodPoint'],
       this.prodPrice=params['prodPrice']
     });
 
-    console.log(this.prodImg)
   }
 
 }

@@ -9,24 +9,19 @@
     filter: grayscale(50%);
     background-position: center; 
     background-repeat: no-repeat;
-    border-radius: 50px 0px 0px 50px;
+    border-radius: 350px 0px 0px 350px;
     
 }
-.title{
-    margin-top: 200px;
-    font-family: 'Poppins';
-    text-transform: uppercase;
-    font-size: 35px;
-    font-weight: 900;
-    text-align: center;
-}
-.desc{
-    text-align: center;
-}
+
 button{
+    height: 70px;
     text-align: center;
     margin-top: 50px;
+    margin-bottom: 45px;
+    width: 100%;
+    border-radius: 0px 50px 50px 0px;
 }
 .left-side{
     text-align: center;
+    padding-right: 15px;
 }

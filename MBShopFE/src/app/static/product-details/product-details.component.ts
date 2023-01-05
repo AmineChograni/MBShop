@@ -93,6 +93,7 @@ export class ProductDetailsComponent implements OnInit {
       prodImg: this.mainProductImage,
       prodName:this.product.label,
       prodColor:this.radioColorValue,
+      prodPoint:this.radioPointureValue,
       prodPrice:this.product.price
     }});
   }
