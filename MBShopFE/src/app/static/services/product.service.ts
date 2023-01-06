@@ -32,4 +32,7 @@ export class ProductService{
     getProductById(productId:Number): Observable<any>{
         return this.httpClient.get<any>(`${this.productApi}/product/${productId}`)
     }
+    getAllCategories():Observable<any>{
+        return this.httpClient.get<any>(`${this.productApi}/categories`)
+    }
 }

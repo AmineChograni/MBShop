@@ -7,6 +7,8 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
@@ -29,8 +31,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     NzButtonModule,
     FormsModule,
     NzFormModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
+    NzIconModule,
+    NzToolTipModule
   ]
 })
 export class HomeModule { }

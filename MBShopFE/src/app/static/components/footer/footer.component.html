@@ -1,1 +1,38 @@
-<p>footer works!</p>
+<nz-footer id="footer">
+
+    <div nz-row nzJustify="center" id="all_element">
+        <div nz-col [nzMd]="{ span: 6}" [nzSm]="{ span: 24}" [nzXs]="{ span: 22}" class="elements">
+            <h1 id="footer_title">MBShop</h1>
+            <p id="footer_desc">Découvrez la meilleure sélection de chaussures du monde.</p>
+        </div>
+        <div nz-col [nzMd]="{ span: 6}" [nzSm]="{ span: 8}" [nzXs]="{ span: 22}"  class="elements">
+            <p class="footer_list_title">MBShop</p>
+            <div class="line"></div>
+            <a href="#" class="link">Contactez-nous</a>
+            <a href="#" class="link">A propos de nous</a>
+            <a href="#" class="link">Politique d'échange</a>
+            <a href="#" class="link">Confidentialité</a>
+        </div>
+        <div nz-col [nzMd]="{ span: 6}" [nzSm]="{ span: 8}" [nzXs]="{ span: 22}" class="elements">
+            <p class="footer_list_title">CATEGORIES</p>
+            <div class="line"></div>
+            <a *ngFor="let cate of categories | slice:0:5" href="/products/{{cate.id}}" class="link">{{ cate.label }}</a>
+            
+        </div>
+        <div nz-col [nzMd]="{ span: 6}" [nzSm]="{ span: 8}" [nzXs]="{ span: 22}" class="elements">
+            <p class="footer_list_title">social</p>
+            <div class="line"></div>
+            <i nz-icon nzType="facebook" nzTheme="outline" class="icone"></i>
+            <i nz-icon nzType="instagram" nzTheme="outline" class="icone"></i>
+            <i nz-icon nzType="linkedin" nzTheme="outline" class="icone"></i>
+        </div>
+    </div>
+    
+
+
+    <p id="copyright">Copyright ©2023 Designed by <a href="#">CHOGRANI Amine</a></p>
+    
+
+    
+    
+</nz-footer>
