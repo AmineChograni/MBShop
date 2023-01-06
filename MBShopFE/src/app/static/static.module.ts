@@ -10,10 +10,12 @@ import { StaticRoutingModule } from './static-routing.module';
 import { StaticComponent } from './static.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PolitiqueComponent } from './politique/politique.component';
+import { ConfidentialiteComponent } from './confidentialite/confidentialite.component';
 
 
 @NgModule({
-  declarations: [StaticComponent, NavbarComponent, FooterComponent],
+  declarations: [StaticComponent, NavbarComponent, FooterComponent, PolitiqueComponent, ConfidentialiteComponent],
   imports: [
     CommonModule,
     StaticRoutingModule,

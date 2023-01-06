@@ -1,6 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StaticComponent } from './static.component';
+import { PolitiqueComponent } from './../static/politique/politique.component';
+import { ConfidentialiteComponent } from './../static/confidentialite/confidentialite.component';
+
 
 const routes: Routes = [
   {
@@ -11,6 +14,8 @@ const routes: Routes = [
       { path: "products/:id", loadChildren: () => import('./product/product.module').then(mod => mod.ProductModule) },
       { path: "product/:id", loadChildren: () => import('./product-details/product-details.module').then(mod => mod.ProductDetailsModule) },
       { path: "paiement", loadChildren: () => import('./paiement/paiement.module').then(mod => mod.PaiementModule) },
+      { path: "politique d'échange",component: PolitiqueComponent },
+      { path: "confidentialité",component: ConfidentialiteComponent }
     ]
   },
 ];
