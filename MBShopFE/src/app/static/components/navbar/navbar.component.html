@@ -1,3 +1,4 @@
+<!--
 <section class="navigation">
     <div class="nav-container">
       <div class="brand">
@@ -33,4 +34,33 @@
     </ul>
   </nav>
       </div>
-  </section>
+  </section>-->
+
+  <div class="topnav" id="myTopnav">
+    <a href="#" class="active"><img src="../../../../assets/images/websitelogo.png" alt="" srcset="" style="height: 25px;"></a>
+    <a nz-dropdown [nzDropdownMenu]="menu">
+      HOMME
+      <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu>
+        <li *ngFor="let caty of categoryH" nz-menu-item ><a routerLink='/products/{{caty.id}}'> {{ caty.label }} </a></li>
+      </ul>
+    </nz-dropdown-menu>
+    <a href="#">FEMME</a>
+    <a nz-dropdown [nzDropdownMenu]="menu1">
+      ENFANT
+      <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+    <nz-dropdown-menu #menu1="nzDropdownMenu">
+      <ul nz-menu>
+        <li *ngFor="let caty of categoryE" nz-menu-item ><a routerLink='/products/{{caty.id}}'> {{ caty.label }} </a></li>
+      </ul>
+    </nz-dropdown-menu>
+    <a href="#">ACCESSOIRES</a>
+    <a href="#PROPOS">À PROPOS</a>
+    <a href="#CONTACT">CONTACT</a>
+    <a href="javascript:void(0);" class="icon" (click)="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>

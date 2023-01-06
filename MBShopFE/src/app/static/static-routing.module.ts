@@ -14,8 +14,8 @@ const routes: Routes = [
       { path: "products/:id", loadChildren: () => import('./product/product.module').then(mod => mod.ProductModule) },
       { path: "product/:id", loadChildren: () => import('./product-details/product-details.module').then(mod => mod.ProductDetailsModule) },
       { path: "paiement", loadChildren: () => import('./paiement/paiement.module').then(mod => mod.PaiementModule) },
-      { path: "politique d'échange",component: PolitiqueComponent },
-      { path: "confidentialité",component: ConfidentialiteComponent }
+      { path: "politique dechange",component: PolitiqueComponent },
+      { path: "confidentialite",component: ConfidentialiteComponent }
     ]
   },
 ];

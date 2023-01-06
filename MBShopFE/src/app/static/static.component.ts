@@ -12,4 +12,6 @@ export class StaticComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
 }

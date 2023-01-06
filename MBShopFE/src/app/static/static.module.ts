@@ -12,6 +12,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PolitiqueComponent } from './politique/politique.component';
 import { ConfidentialiteComponent } from './confidentialite/confidentialite.component';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { ConfidentialiteComponent } from './confidentialite/confidentialite.comp
     StaticRoutingModule,
     NzGridModule,
     NzLayoutModule,
-    NzButtonModule
+    NzButtonModule,
+    NzDropDownModule,
+    NzTypographyModule
   ]
 })
 export class StaticModule { }

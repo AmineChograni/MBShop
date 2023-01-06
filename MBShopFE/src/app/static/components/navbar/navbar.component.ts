@@ -1,6 +1,5 @@
 import { Category } from './../../models/Category';
 import { Component, OnInit } from '@angular/core';
-import * as $ from "jquery";
 import { ProductService } from './../../services/product.service';
 
 @Component({
@@ -18,7 +17,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     
-      $(function() {
+      /*$(function() {
         $('nav ul li > a:not(:only-child)').click(function(e) {
           $(this)
             .siblings('.nav-dropdown')
@@ -38,7 +37,9 @@ export class NavbarComponent implements OnInit {
         $('#nav-toggle').on('click', function() {
           this.classList.toggle('active')
         })
-      })
+      })*/
+
+
 
       this.productService.getCategoriesByGroupId(4).subscribe(data => {
         this.categoryH=data.categories;
@@ -49,5 +50,15 @@ export class NavbarComponent implements OnInit {
       })
   
   }
+
+  myFunction() {
+    let x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+
 
 }
