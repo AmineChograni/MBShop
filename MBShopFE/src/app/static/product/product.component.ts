@@ -50,4 +50,8 @@ export class ProductComponent implements OnInit {
     console.log('click dropdown button');
   }
 
+  goBack() {
+    window.history.back()
+  }
+
 }
