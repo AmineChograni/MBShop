@@ -44,7 +44,7 @@
     </a>
     <nz-dropdown-menu #menu="nzDropdownMenu">
       <ul nz-menu>
-        <li *ngFor="let caty of categoryH" nz-menu-item ><a routerLink='/products/{{caty.id}}'> {{ caty.label }} </a></li>
+        <li *ngFor="let caty of categoryH" nz-menu-item ><a href='/products/{{caty.id}}'> {{ caty.label }} </a></li>
       </ul>
     </nz-dropdown-menu>
     <a href="#">FEMME</a>
@@ -54,7 +54,7 @@
     </a>
     <nz-dropdown-menu #menu1="nzDropdownMenu">
       <ul nz-menu>
-        <li *ngFor="let caty of categoryE" nz-menu-item ><a routerLink='/products/{{caty.id}}'> {{ caty.label }} </a></li>
+        <li *ngFor="let caty of categoryE" nz-menu-item ><a href='/products/{{caty.id}}'> {{ caty.label }} </a></li>
       </ul>
     </nz-dropdown-menu>
     <a href="#">ACCESSOIRES</a>
