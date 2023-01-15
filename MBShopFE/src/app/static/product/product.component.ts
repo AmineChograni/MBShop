@@ -10,12 +10,13 @@ import { ProductService } from './../services/product.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit {
 
-  selectedValue = null;
-  selectedColorValue=null;
+
+export class ProductComponent implements OnInit{
+
   selectedCategoriesValue=null;
   show = false;
+  search: string;
 
 
   categoryId: Number;
@@ -40,7 +41,6 @@ export class ProductComponent implements OnInit {
       
       this.products=this.category.products;
       
-      console.log(this.products);
       
     })
 
@@ -52,6 +52,21 @@ export class ProductComponent implements OnInit {
 
   goBack() {
     window.history.back()
+  }
+
+  Search(){
+    console.log(this.search);
+    if(this.search != ""){
+      console.log(this.search);
+      this.productService.getProductByCategoriesIdFilterLabel(this.categoryId,this.search).subscribe(data =>{
+        this.category=data;
+        this.products=this.category.products;
+      })
+
+    }else if(this.search == ""){
+      console.log(this.search);
+      this.ngOnInit();
+    }
   }
 
 }

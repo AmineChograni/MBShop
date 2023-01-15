@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MBShopBE.Context;
 using MBShopBE.Models;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using System.Xml.Linq;
+
 
 namespace MBShopBE.Controllers
 {
@@ -57,6 +60,44 @@ namespace MBShopBE.Controllers
                         }
                     }
                     category.Products.Add(product);
+                }
+            }
+
+            return category;
+        }
+
+        // GET: api/Categories/5/title
+        [HttpGet("{id}/{title}")]
+        public async Task<ActionResult<Category>> GetCategory(int id,string title)
+        {
+            var category = await _context.Categories.FindAsync(id);
+
+
+            if (category == null)
+            {
+                
+                return NotFound();
+            }
+
+            //var prodImages = _context.ProdImages.ToList();
+
+
+
+            var products = _context.Products.Where(p => p.Label.Contains(title)).ToList();
+            var prodImages = _context.ProdImages.ToList();
+            foreach (var product in products)
+            {
+                if (product.CategoryId == id)
+                {
+                    foreach (var prodImage in prodImages)
+                    {
+                        if (prodImage.ProductId == product.Id)
+                        {
+                            product.ProdImages.Add(prodImage);
+                        }
+                    }
+
+                    
                 }
             }
 

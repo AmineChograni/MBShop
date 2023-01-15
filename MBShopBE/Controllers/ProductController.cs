@@ -28,6 +28,8 @@ namespace MBShopBE.Controllers
             return await _context.Products.ToListAsync();
         }
 
+
+
         // GET: api/Product/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)

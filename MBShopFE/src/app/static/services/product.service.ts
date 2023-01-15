@@ -28,6 +28,9 @@ export class ProductService{
     getProductByCategoriesId(categoryId: Number): Observable<any>{
         return this.httpClient.get<any>(`${this.productApi}/categories/${categoryId}`)
     }
+    getProductByCategoriesIdFilterLabel(categoryId: Number,label: string): Observable<any>{
+        return this.httpClient.get<any>(`${this.productApi}/categories/${categoryId}/${label}`)
+    }
 
     getProductById(productId:Number): Observable<any>{
         return this.httpClient.get<any>(`${this.productApi}/product/${productId}`)
