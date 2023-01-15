@@ -14,7 +14,7 @@ import { ProductService } from './../services/product.service';
 
 export class ProductComponent implements OnInit{
 
-  selectedCategoriesValue=null;
+  selectedValue: number;
   show = false;
   search: string;
 
@@ -22,6 +22,7 @@ export class ProductComponent implements OnInit{
   categoryId: Number;
   products: Product[] = [];
   category: Category;
+  allCategories : Category[]=[];
 
   constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService) { }
 
@@ -38,10 +39,11 @@ export class ProductComponent implements OnInit{
 
     this.productService.getProductByCategoriesId(this.categoryId).subscribe(data => {
       this.category=data;
-      
       this.products=this.category.products;
-      
-      
+    })
+
+    this.productService.getAllCategories().subscribe(data => {
+      this.allCategories=data;
     })
 
   }
@@ -55,18 +57,19 @@ export class ProductComponent implements OnInit{
   }
 
   Search(){
-    console.log(this.search);
     if(this.search != ""){
-      console.log(this.search);
       this.productService.getProductByCategoriesIdFilterLabel(this.categoryId,this.search).subscribe(data =>{
         this.category=data;
         this.products=this.category.products;
       })
 
     }else if(this.search == ""){
-      console.log(this.search);
       this.ngOnInit();
     }
+  }
+
+  selectCategory(id: number){
+    window.location.href=`/products/${id}`;
   }
 
 }

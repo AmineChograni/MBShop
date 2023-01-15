@@ -16,7 +16,7 @@
     <div nz-col nzSpan="22">
         
         <div nz-row nzJustify="start" class="select-section">
-            <div nz-col nzSpan="9">
+            <div nz-col nzSpan="10">
                 <nz-input-group [nzSuffix]="suffixIconSearch">
                     <input type="text" nz-input placeholder="Trouver un produit"  name="search" [(ngModel)]="search" (input)="Search()"/>
                 </nz-input-group>
@@ -24,17 +24,11 @@
                     <span nz-icon nzType="search"></span>
                 </ng-template>
             </div>
-            <div nz-col nzSpan="1"></div>
-            <div nz-col nzSpan="9">
-                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="CATEGORIES" (ngModel)="selectedCategoriesValue">
-                    <nz-option nzLabel="Baskets Femmes" nzValue="jack"></nz-option>
-                    <nz-option nzLabel="Chaussette femme" nzValue="lucy"></nz-option>
-                    <nz-option nzLabel="Bottes et cuissardes" nzValue="tom"></nz-option>
+            <div nz-col nzSpan="4"></div>
+            <div nz-col nzSpan="10">
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="CATEGORIES"  [(ngModel)]="selectedValue" (ngModelChange)="selectCategory(selectedValue)">
+                    <nz-option *ngFor="let caty of allCategories" nzLabel="{{caty.label}}" [nzValue]="caty.id"></nz-option>
                 </nz-select>
-            </div>
-            <div nz-col nzSpan="1"></div>
-            <div nz-col nzSpan="4">
-                <button nz-button nzType="primary" class="select-btn">SELECT</button>
             </div>
         </div>
         <div class="line"></div>
