@@ -22,8 +22,10 @@
     "@ant-design/icons": "^4.7.0",
     "@ng-toolkit/universal": "^1.1.21",
     "jquery": "^3.6.0",
+    "jw-angular-pagination": "^1.2.0",
     "ng-zorro-antd": "^11.4.2",
     "ng2-search-filter": "^0.5.1",
+    "ngx-pagination": "^6.0.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from './../models/Product';
 import { ProductService } from './../services/product.service';
 
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -23,6 +24,7 @@ export class ProductComponent implements OnInit{
   products: Product[] = [];
   category: Category;
   allCategories : Category[]=[];
+
 
   constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService) { }
 
