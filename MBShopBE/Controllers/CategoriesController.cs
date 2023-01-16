@@ -48,6 +48,7 @@ namespace MBShopBE.Controllers
 
             var products = _context.Products.ToList();
             var prodImages = _context.ProdImages.ToList();
+            var prodTailles = _context.Tailles.ToList();
             foreach (var product in products)
             {
                 if (product.CategoryId == id)
@@ -59,9 +60,20 @@ namespace MBShopBE.Controllers
                             product.ProdImages.Add(prodImage);
                         }
                     }
+                    foreach (var prodTaille in prodTailles)
+                    {
+                        if (prodTaille.ProductId == product.Id)
+                        {
+                            product.Tailles.Add(prodTaille);
+                        }
+                    }
                     category.Products.Add(product);
                 }
             }
+
+            
+
+
 
             return category;
         }
@@ -85,6 +97,7 @@ namespace MBShopBE.Controllers
 
             var products = _context.Products.Where(p => p.Label.Contains(title)).ToList();
             var prodImages = _context.ProdImages.ToList();
+            var prodTailles = _context.Tailles.ToList();
             foreach (var product in products)
             {
                 if (product.CategoryId == id)
@@ -95,9 +108,17 @@ namespace MBShopBE.Controllers
                         {
                             product.ProdImages.Add(prodImage);
                         }
+
+                    }
+                    foreach (var prodTaille in prodTailles)
+                    {
+                        if (prodTaille.ProductId == product.Id)
+                        {
+                            product.Tailles.Add(prodTaille);
+                        }
                     }
 
-                    
+
                 }
             }
 

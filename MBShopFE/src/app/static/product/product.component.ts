@@ -1,3 +1,4 @@
+import { Taille } from './../models/Taille';
 import { Category } from './../models/Category';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
@@ -16,7 +17,6 @@ import { ProductService } from './../services/product.service';
 export class ProductComponent implements OnInit{
 
   selectedValue: number;
-  show = false;
   search: string;
 
 
@@ -43,6 +43,7 @@ export class ProductComponent implements OnInit{
       this.category=data;
       this.products=this.category.products;
     })
+    
 
     this.productService.getAllCategories().subscribe(data => {
       this.allCategories=data;
