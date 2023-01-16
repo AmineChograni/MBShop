@@ -84,7 +84,7 @@ export class ProductDetailsComponent implements OnInit {
   getRelativeProducts(cateId:Number){
     this.productService.getProductByCategoriesId(cateId).subscribe(data => {
       this.products=data.products;
-      console.log(this.products);
+      this.RemoveElementFromObjectArray(this.productId);
     })
   }
 
@@ -97,6 +97,11 @@ export class ProductDetailsComponent implements OnInit {
       prodPrice:this.product.price
     }});
   }
+  RemoveElementFromObjectArray(key: Number) {
+    this.products.forEach((value,index)=>{
+        if(value.id==key) this.products.splice(index,1);
+    });
+} 
 
 
 }
