@@ -17,8 +17,10 @@ import { ProdImage } from '../models/ProdImage';
 export class ProductDetailsComponent implements OnInit {
 
   demoValue = 1;
-  radioPointureValue = 'A';
-  radioColorValue='A';
+  radioPointureValue = '';
+  radioColorValue='';
+  colorErr=false;
+  tailleErr=false;
 
   productId:Number;
   product:Product;
@@ -89,14 +91,21 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   goPaiment(){
-    this.route.navigate(['/paiement'],{queryParams:{
-      prodImg: this.mainProductImage,
-      prodName:this.product.label,
-      prodColor:this.radioColorValue,
-      prodPoint:this.radioPointureValue,
-      prodPrice:this.product.price,
-      prodQuantity:this.demoValue
-    }});
+    if(this.radioColorValue == ''){
+      this.colorErr=true;
+    }else if(this.radioPointureValue == ''){
+      this.tailleErr=true;
+    }else{
+      this.route.navigate(['/paiement'],{queryParams:{
+        prodImg: this.mainProductImage,
+        prodName:this.product.label,
+        prodColor:this.radioColorValue,
+        prodPoint:this.radioPointureValue,
+        prodPrice:this.product.price,
+        prodQuantity:this.demoValue
+      }});
+    }
+
   }
   RemoveElementFromObjectArray(key: Number) {
     this.products.forEach((value,index)=>{

@@ -20,23 +20,33 @@
                 
                 <!--colors-->
                 <h3>Couleur : </h3>
-
                 <nz-radio-group [(ngModel)]="radioColorValue" class="couleur" >
                     <label *ngFor="let color of colors" nz-radio-button nzValue="{{color.label}}" [ngStyle]="{'background-color': color.codeColor}" (click)='colorSelect()'></label>
                 </nz-radio-group>
+                <nz-alert *ngIf="colorErr"
+                nzType="error"
+                nzMessage="Error"
+                nzDescription="Ce champ ne doit pas etre vide"
+                nzShowIcon
+                ></nz-alert>
 
                 <!--tailles-->
                 <h3>Pointure : </h3>
                 <nz-radio-group [(ngModel)]="radioPointureValue" class="pointure">
                     <label *ngFor="let taille of tailles" nz-radio-button nzValue="{{taille.label}}">{{taille.label}}</label>
                 </nz-radio-group>
+                <nz-alert *ngIf="tailleErr"
+                nzType="error"
+                nzMessage="Error"
+                nzDescription="Ce champ ne doit pas etre vide"
+                nzShowIcon
+                ></nz-alert>
 
                 <div nz-row nzJustify="start">
                     <nz-input-number [(ngModel)]="demoValue" nzSize="large" [nzMin]="1" [nzMax]="10" [nzStep]="1"></nz-input-number>
                     <button nz-button nzSize="large" nzType="primary" (click)="goPaiment()">
                          <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;J'ACHETE
                     </button>
-
                 </div>
                 <p>⇁ L'échange est gratuit seulement en magasin.</p>
             </div>
