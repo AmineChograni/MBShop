@@ -15,11 +15,11 @@
                 <!--label-->
                 <h1 class="label">{{product.label}}</h1>
                 <!--price-->
-                <h2 class="price">{{product.price}}</h2>
+                <h2 class="price">{{product.price}} MAD</h2>
 
                 
                 <!--colors-->
-                <h3>Couleur : </h3>
+                <h2>Couleur : </h2>
                 <nz-radio-group [(ngModel)]="radioColorValue" class="couleur" >
                     <label *ngFor="let color of colors" nz-radio-button nzValue="{{color.label}}" [ngStyle]="{'background-color': color.codeColor}" (click)='colorSelect()'></label>
                 </nz-radio-group>
@@ -31,7 +31,7 @@
                 ></nz-alert>
 
                 <!--tailles-->
-                <h3>Pointure : </h3>
+                <h2>Pointure : </h2>
                 <nz-radio-group [(ngModel)]="radioPointureValue" class="pointure">
                     <label *ngFor="let taille of tailles" nz-radio-button nzValue="{{taille.label}}">{{taille.label}}</label>
                 </nz-radio-group>
