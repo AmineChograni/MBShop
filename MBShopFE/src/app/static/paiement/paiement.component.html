@@ -9,53 +9,52 @@
     <div nz-col nzSpan="2"></div>
     <div nz-col nzSpan="10" class="facturation">
         <h1>DÉTAILS DE FACTURATION</h1>
-        <form nz-form>
-
+        <form nz-form (ngSubmit)="submitForm()" [formGroup]="commForm" id="sheetdb">
             <nz-form-label [nzSpan]="10" nzFor="name">Nom complet - الإسم الكامل </nz-form-label>
             <nz-form-item>
-              <nz-form-control [nzSpan]="14">
-                <input nz-input name="name" type="text" id="name" nzSize="large">
+              <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzSpan]="14" >
+                <input nz-input formControlName="name" name="name" type="text" id="name" nzSize="large">
               </nz-form-control>
             </nz-form-item >
 
             <nz-form-label [nzSpan]="10" nzFor="tele">Téléphone </nz-form-label>
             <nz-form-item>
-              <nz-form-control [nzSpan]="14">
-                <input nz-input name="tele" type="number" id="tele" nzSize="large">
+              <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzSpan]="14">
+                <input nz-input formControlName="tele" name="tele" type="number" id="tele" nzSize="large">
               </nz-form-control>
             </nz-form-item >
 
             <nz-form-label [nzSpan]="10" nzFor="adr">Adresse complète - العنوان الكامل </nz-form-label>
             <nz-form-item>
-              <nz-form-control [nzSpan]="14">
-                <input nz-input name="adr" type="text" id="adr" nzSize="large" placeholder="Numéro de voie et nom de la rue">
+              <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzSpan]="14">
+                <input nz-input formControlName="adr"  name="adr" type="text" id="adr" nzSize="large" placeholder="Numéro de voie et nom de la rue">
               </nz-form-control>
             </nz-form-item >
 
             <nz-form-label [nzSpan]="10" nzFor="ville">la ville - المدينة</nz-form-label>
             <nz-form-item>
-              <nz-form-control [nzSpan]="14">
-                <input nz-input name="ville" type="text" id="ville" nzSize="large">
+              <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzSpan]="14">
+                <input nz-input formControlName="ville" name="ville" type="text" id="ville" nzSize="large">
               </nz-form-control>
             </nz-form-item >
 
             <nz-form-label [nzSpan]="10" nzFor="codep">Code postal (facultatif)</nz-form-label>
             <nz-form-item>
-              <nz-form-control [nzSpan]="14">
-                <input nz-input name="codep" type="text" id="code" nzSize="large">
+              <nz-form-control  [nzSpan]="14">
+                <input nz-input formControlName="codep" name="codep" type="text" id="codep" nzSize="large">
               </nz-form-control>
             </nz-form-item >
 
             <nz-form-label [nzSpan]="10" nzFor="email">Adresse Email (facultatif)</nz-form-label>
             <nz-form-item>
-                <nz-form-control [nzSpan]="14" nzErrorTip="Ce champ ne doit pas etre vide">
-                    <input nz-input name="email" type="email" id="email" nzSize="large">
+                <nz-form-control [nzSpan]="14" >
+                    <input nz-input formControlName="email" name="email" type="email" id="email" nzSize="large">
                 </nz-form-control>
             </nz-form-item >
 
             <nz-form-item>
                 <nz-form-control [nzSpan]="14">
-                  <button nz-button nzType="primary" id="commander" nzBlock nzSize="large">COMMANDER</button>
+                  <button nz-button nzType="primary"  id="submit" nzBlock nzSize="large">COMMANDER</button>
                 </nz-form-control>
             </nz-form-item>
         </form>

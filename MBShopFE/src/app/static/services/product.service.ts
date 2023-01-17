@@ -1,3 +1,4 @@
+import { Command } from './../models/Command';
 import { Product } from './../models/Product';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -39,5 +40,10 @@ export class ProductService{
     }
     getAllCategories():Observable<any>{
         return this.httpClient.get<any>(`${this.productApi}/categories`)
+    }
+
+    postComm(command:Command){
+        return this.httpClient.post('https://sheetdb.io/api/v1/1fuhwuz2s71hh',command);
+
     }
 }

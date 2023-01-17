@@ -1,6 +1,9 @@
+import { ProductService } from './../services/product.service';
+import { Command } from './../models/Command';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { FormControl,FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-paiement',
@@ -17,8 +20,9 @@ export class PaiementComponent implements OnInit {
   prodQuantity:number;
   total:number;
   
+  commForm: FormGroup;
 
-  constructor(private titleService: Title,private router:ActivatedRoute,private route : Router) { }
+  constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService) { }
 
   public createImgPath = (serverPath: String) => { 
     return `https://localhost:44353/${serverPath}`; 
@@ -35,9 +39,48 @@ export class PaiementComponent implements OnInit {
       this.prodQuantity=params['prodQuantity']
     });
     this.total=this.prodPrice*this.prodQuantity;
-    console.log(this.total);
-    console.log(this.prodPrice);
-    console.log(this.prodQuantity);
+
+
+    this.commForm = new FormGroup({
+      name:new FormControl("",Validators.required),
+      tele:new FormControl("",Validators.required),
+      adr:new FormControl("",Validators.required),
+      ville:new FormControl("",Validators.required),
+      codep:new FormControl(null),
+      email:new FormControl(null),
+    });
   }
+
+  submitForm(){
+    
+    console.log(this.commForm.valid);
+    if(this.commForm.valid){
+      //console.log(this.name , this.tele, this.adr, this.ville, this.codep, this.email);
+      //console.log(this.prodName , this.prodColor, this.prodPoint, this.prodPrice, this.prodQuantity, this.total);
+
+      //https://sheetdb.io/api/v1/1fuhwuz2s71hh
+      let command=new Command(this.name,this.tele,this.adr,this.ville,this.codep,this.email,this.prodName,this.prodPrice,this.prodQuantity,this.prodPoint,this.prodColor,this.total);
+      console.log(command);
+      this.productService.postComm(command).subscribe(data=>{
+        console.log("success");
+      });
+    }else {
+      console.log("im here");
+      Object.values(this.commForm.controls).forEach(control => {
+        if (control.invalid) {
+          control.markAsDirty();
+          control.updateValueAndValidity({ onlySelf: true });
+        }
+      });
+    }
+  }
+
+  get name(){return this.commForm.get('name').value};
+  get tele(){return this.commForm.get('tele').value};
+  get adr(){return this.commForm.get('adr').value};
+  get ville(){return this.commForm.get('ville').value};
+  get codep(){return this.commForm.get('codep').value};
+  get email(){return this.commForm.get('email').value};
+  
 
 }
