@@ -94,7 +94,8 @@ export class ProductDetailsComponent implements OnInit {
       prodName:this.product.label,
       prodColor:this.radioColorValue,
       prodPoint:this.radioPointureValue,
-      prodPrice:this.product.price
+      prodPrice:this.product.price,
+      prodQuantity:this.demoValue
     }});
   }
   RemoveElementFromObjectArray(key: Number) {

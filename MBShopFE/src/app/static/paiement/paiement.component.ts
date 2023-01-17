@@ -13,7 +13,9 @@ export class PaiementComponent implements OnInit {
   prodName:String;
   prodColor:String;
   prodPoint:Number;
-  prodPrice:Number;
+  prodPrice:number;
+  prodQuantity:number;
+  total:number;
   
 
   constructor(private titleService: Title,private router:ActivatedRoute,private route : Router) { }
@@ -29,9 +31,13 @@ export class PaiementComponent implements OnInit {
       this.prodName=params['prodName'],
       this.prodColor=params['prodColor'],
       this.prodPoint=params['prodPoint'],
-      this.prodPrice=params['prodPrice']
+      this.prodPrice=params['prodPrice'],
+      this.prodQuantity=params['prodQuantity']
     });
-
+    this.total=this.prodPrice*this.prodQuantity;
+    console.log(this.total);
+    console.log(this.prodPrice);
+    console.log(this.prodQuantity);
   }
 
 }
