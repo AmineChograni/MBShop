@@ -3,6 +3,7 @@ import { Command } from './../models/Command';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { FormControl,FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -19,10 +20,12 @@ export class PaiementComponent implements OnInit {
   prodPrice:number;
   prodQuantity:number;
   total:number;
+  statu:String = 'pas encoure';
+  categoryId:Number;
   
   commForm: FormGroup;
 
-  constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService) { }
+  constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService,private modal: NzModalService) { }
 
   public createImgPath = (serverPath: String) => { 
     return `https://localhost:44353/${serverPath}`; 
@@ -37,6 +40,7 @@ export class PaiementComponent implements OnInit {
       this.prodPoint=params['prodPoint'],
       this.prodPrice=params['prodPrice'],
       this.prodQuantity=params['prodQuantity']
+      this.categoryId=params['categoryId'];
     });
     this.total=this.prodPrice*this.prodQuantity;
 
@@ -59,10 +63,11 @@ export class PaiementComponent implements OnInit {
       //console.log(this.prodName , this.prodColor, this.prodPoint, this.prodPrice, this.prodQuantity, this.total);
 
       //https://sheetdb.io/api/v1/1fuhwuz2s71hh
-      let command=new Command(this.name,this.tele,this.adr,this.ville,this.codep,this.email,this.prodName,this.prodPrice,this.prodQuantity,this.prodPoint,this.prodColor,this.total);
-      console.log(command);
+      let command=new Command(this.name,this.tele,this.adr,this.ville,this.codep,this.email,this.prodName,this.prodPrice,this.prodQuantity,this.prodPoint,this.prodColor,this.total,this.statu);
+      
       this.productService.postComm(command).subscribe(data=>{
-        console.log("success");
+        this.success();
+        
       });
     }else {
       console.log("im here");
@@ -73,6 +78,13 @@ export class PaiementComponent implements OnInit {
         }
       });
     }
+  }
+  success(): void {
+    this.modal.success({
+      nzTitle: 'This is a success message',
+      nzContent: 'some messages...some messages...',
+      nzOnOk: () => window.location.href=`/products/${this.categoryId}`
+    });
   }
 
   get name(){return this.commForm.get('name').value};

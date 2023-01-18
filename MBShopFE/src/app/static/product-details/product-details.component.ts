@@ -102,7 +102,8 @@ export class ProductDetailsComponent implements OnInit {
         prodColor:this.radioColorValue,
         prodPoint:this.radioPointureValue,
         prodPrice:this.product.price,
-        prodQuantity:this.demoValue
+        prodQuantity:this.demoValue,
+        categoryId:this.categoryId
       }});
     }
 
