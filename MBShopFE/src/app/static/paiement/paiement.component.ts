@@ -81,8 +81,8 @@ export class PaiementComponent implements OnInit {
   }
   success(): void {
     this.modal.success({
-      nzTitle: 'This is a success message',
-      nzContent: 'some messages...some messages...',
+      nzTitle: 'La demande a réussi',
+      nzContent: 'Découvrez plus de nos produits...',
       nzOnOk: () => window.location.href=`/products/${this.categoryId}`
     });
   }

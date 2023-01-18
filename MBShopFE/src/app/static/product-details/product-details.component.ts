@@ -65,7 +65,11 @@ export class ProductDetailsComponent implements OnInit {
       this.mainProductImage=this.product.imageURL;
       this.productImagesUrl=[]
       for(var image of this.prodImages){
-        this.productImagesUrl.push(image.imageURL);
+        for (var image of this.prodImages) {
+          if(image.color == 'noir'){
+            this.productImagesUrl.push(image.imageURL);
+          }
+        }
       }
       
       
