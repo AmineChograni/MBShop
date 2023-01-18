@@ -1,17 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 
-[nz-carousel-content] {
-    height: 90vh;
-    color: #fff;
-    background-size: cover;
-    overflow: hidden;
-    filter: grayscale(50%);
-    background-position: center; 
-    background-repeat: no-repeat;
-    border-radius: 350px 0px 0px 350px;
-    
+
+.container{
+    height: 95vh;
+    background-image: url("../../../../assets/images/hommecla.jpg");
+    background-size:cover;
 }
+
+
 
 button{
     height: 70px;
@@ -19,9 +16,13 @@ button{
     margin-top: 50px;
     margin-bottom: 45px;
     width: 100%;
-    border-radius: 0px 50px 50px 0px;
+    border-radius: 50px 50px 50px 50px;
+    background-color: black;
 }
 .left-side{
     text-align: center;
     padding-right: 15px;
+}
+.son{
+    height: 100%;
 }

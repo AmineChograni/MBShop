@@ -1,16 +1,10 @@
 <div nz-row nzJustify="center" class="hero-section">
-    <div nz-col nzSpan="6" class="left-side">
-        <button nz-button nzType="primary" nzSize="large" onclick="window.location.href='/products/5';">Bottine Homme</button>
-        <button nz-button nzType="primary" nzSize="large" onclick="window.location.href='/products/9';">Sabot Medical</button>
-        <button nz-button nzType="primary" nzSize="large" onclick="window.location.href='/products/3';">Chaussures Garcon</button>
-        <button nz-button nzType="primary" nzSize="large" onclick="window.location.href='/products/11';">Baskets</button>
-    </div>
-    <div nz-col nzSpan="2"></div>
-    <div nz-col nzSpan="16">
-        <nz-carousel nzAutoPlay>
-            <div nz-carousel-content *ngFor="let hero of heroOBJS" style="background-image: url({{hero.imgURL}});">
-                
-            </div>
-          </nz-carousel>
+    <div nz-col nzSpan="24" class="container">
+        <div nz-row nzJustify="space-around" nzAlign="bottom" class="son">
+            <div nz-col nzSpan="4"><button nz-button nzType="primary" nzSize="large" onclick="window.location.href='/products/5';">Bottine Homme</button></div>
+            <div nz-col nzSpan="4"><button nz-button nzType="primary" nzSize="large" onclick="window.location.href='/products/9';">Sabot Medical</button></div>
+            <div nz-col nzSpan="4"><button nz-button nzType="primary" nzSize="large" onclick="window.location.href='/products/3';">Chaussures Garcon</button></div>
+            <div nz-col nzSpan="4"><button nz-button nzType="primary" nzSize="large" onclick="window.location.href='/products/11';">Baskets</button></div>
+        </div>
     </div>
 </div>
