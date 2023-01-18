@@ -8,7 +8,7 @@
                 <div class="line"></div>
                 <div nz-row nzJustify="space-between">
                     <!-- card -->
-                    <div nz-col nzSpan="4" *ngFor="let prod of prodH | slice:0:5">
+                    <div nz-col [nzMd]="{ span: 4}" [nzSm]="{ span: 9}" *ngFor="let prod of prodH | slice:0:5">
                         <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
                             <nz-card-meta
                               nzTitle="{{prod.label}}"
@@ -28,7 +28,7 @@
                 <div class="line"></div>
                 <div nz-row nzJustify="space-between">
 
-                    <div nz-col nzSpan="4" *ngFor="let prod of Fprod" >
+                    <div nz-col [nzMd]="{ span: 4}" [nzSm]="{ span: 9}" *ngFor="let prod of Fprod" >
                         <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
                             <nz-card-meta
                               nzTitle="{{prod.PTitle}}"
@@ -48,7 +48,7 @@
                 <div class="line"></div>
                 <div nz-row nzJustify="space-between">
                     <!-- card -->
-                    <div nz-col nzSpan="4" *ngFor="let prod of prodE | slice:0:5">
+                    <div nz-col [nzMd]="{ span: 4}" [nzSm]="{ span: 9}" *ngFor="let prod of prodE | slice:0:5">
                         <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
                             <nz-card-meta
                               nzTitle="{{prod.label}}"
