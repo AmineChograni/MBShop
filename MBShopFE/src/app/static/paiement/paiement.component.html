@@ -10,28 +10,28 @@
     <div nz-col nzSpan="10" class="facturation">
         <h1>DÉTAILS DE FACTURATION</h1>
         <form nz-form (ngSubmit)="submitForm()" [formGroup]="commForm" id="sheetdb">
-            <nz-form-label [nzSpan]="10" nzFor="name">Nom complet - الإسم الكامل </nz-form-label>
+            <nz-form-label [nzSpan]="10" nzFor="name">Nom complet - الإسم الكامل <span style="color: red;">*</span></nz-form-label>
             <nz-form-item>
               <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzSpan]="14" >
                 <input nz-input formControlName="name" name="name" type="text" id="name" nzSize="large">
               </nz-form-control>
             </nz-form-item >
 
-            <nz-form-label [nzSpan]="10" nzFor="tele">Téléphone </nz-form-label>
+            <nz-form-label [nzSpan]="10" nzFor="tele">Téléphone <span style="color: red;">*</span></nz-form-label>
             <nz-form-item>
               <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzSpan]="14">
                 <input nz-input formControlName="tele" name="tele" type="number" id="tele" nzSize="large">
               </nz-form-control>
             </nz-form-item >
 
-            <nz-form-label [nzSpan]="10" nzFor="adr">Adresse complète - العنوان الكامل </nz-form-label>
+            <nz-form-label [nzSpan]="10" nzFor="adr">Adresse complète - العنوان الكامل <span style="color: red;">*</span></nz-form-label>
             <nz-form-item>
               <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzSpan]="14">
                 <input nz-input formControlName="adr"  name="adr" type="text" id="adr" nzSize="large" placeholder="Numéro de voie et nom de la rue">
               </nz-form-control>
             </nz-form-item >
 
-            <nz-form-label [nzSpan]="10" nzFor="ville">la ville - المدينة</nz-form-label>
+            <nz-form-label [nzSpan]="10" nzFor="ville">la ville - المدينة <span style="color: red;">*</span></nz-form-label>
             <nz-form-item>
               <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzSpan]="14">
                 <input nz-input formControlName="ville" name="ville" type="text" id="ville" nzSize="large">
