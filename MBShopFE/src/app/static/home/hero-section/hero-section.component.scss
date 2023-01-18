@@ -26,3 +26,54 @@ button{
 .son{
     height: 100%;
 }
+
+
+@media screen and (max-width: 840px) {
+    button{
+        height: 60px;
+    }
+    button span{
+        
+        font-size: 14px;
+    }
+
+     
+}
+@media screen and (max-width: 768px) {
+    button{
+        height: 70px;
+    }
+    button span{
+        
+        font-size: 17px;
+    }
+    .buttonH{
+        display: none;
+    }
+
+     
+}
+
+@media screen and (max-width: 488px) {
+    button{
+        height: 50px;
+    }
+    button span{
+        
+        font-size: 14px;
+    }
+
+     
+}
+@media screen and (max-width: 400px) {
+    button{
+        height: 60px;
+    }
+    button span{
+        
+        font-size: 10px;
+        font-weight: 600;
+    }
+
+     
+}
