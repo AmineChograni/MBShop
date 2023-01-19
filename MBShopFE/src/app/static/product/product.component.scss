@@ -13,7 +13,7 @@
     margin-top: 25px;
 }
 .white_arrow{
-    font-size: 30px;
+    font-size: 35px;
     color: #FFF;
 }
 a{
@@ -81,4 +81,44 @@ nz-pagination{
 }
 .icon:hover{
     color:rgba(255, 255, 255, 0.515);
+}
+@media (max-width: 827px) {
+    .title{
+    
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .white_arrow{
+        font-size: 30px;
+    }
+}
+@media (max-width: 768px) {
+
+    .search-bar{
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 562px) {
+    .title{
+    
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .white_arrow{
+        font-size: 20px;
+    }
+    .navback{
+        height: 70px;
+    }
+}
+@media (max-width: 310px) {
+    .title{
+    
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .white_arrow{
+        font-size: 15px;
+    }
+
 }

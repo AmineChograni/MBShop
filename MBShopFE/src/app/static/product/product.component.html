@@ -2,21 +2,21 @@
     <!--nav back-->
     <div nz-col nzSpan="24" class="navback">
         <div nz-row nzJustify="center" class="navbeck-elements">
-            <div nz-col nzSpan="1"></div>
-            <div nz-col nzSpan="1" class="white_arrow">
+            <div nz-col [nzSm]="{ span: 1}" ></div>
+            <div nz-col [nzSm]="{ span: 1}"  class="white_arrow">
                 <i nz-icon nzType="left" nzTheme="outline" class="icon" (click)="goBack()"></i>
             </div>
-            <div nz-col nzSpan="8">
+            <div nz-col [nzSm]="{ span: 20}" >
                 <h1 class="title">{{category.label}}</h1>
             </div>
-          </div>
+        </div>
     </div>
     <!-- end nav back-->
     <div nz-col nzSpan="1"></div>
     <div nz-col nzSpan="22">
         
-        <div nz-row nzJustify="start" class="select-section">
-            <div nz-col nzSpan="10">
+        <div nz-row nzJustify="center" class="select-section">
+            <div nz-col [nzMd]="{ span: 10}" [nzSm]="{ span: 20}" [nzXs]="{ span: 22}" class="search-bar">
                 <nz-input-group [nzSuffix]="suffixIconSearch">
                     <input type="text" nz-input placeholder="Trouver un produit"  name="search" [(ngModel)]="search" (input)="Search()"/>
                 </nz-input-group>
@@ -24,8 +24,8 @@
                     <span nz-icon nzType="search"></span>
                 </ng-template>
             </div>
-            <div nz-col nzSpan="4"></div>
-            <div nz-col nzSpan="10">
+            <div nz-col [nzMd]="{ span: 4}" [nzSm]="{ span: 0}" [nzXs]="{ span: 0}"></div>
+            <div nz-col  [nzMd]="{ span: 10}" [nzSm]="{ span: 20}" [nzXs]="{ span: 22}">
                 <nz-select nzShowSearch nzAllowClear nzPlaceHolder="CATEGORIES"  [(ngModel)]="selectedValue" (ngModelChange)="selectCategory(selectedValue)">
                     <nz-option *ngFor="let caty of allCategories" nzLabel="{{caty.label}}" [nzValue]="caty.id"></nz-option>
                 </nz-select>
@@ -34,7 +34,7 @@
         <div class="line"></div>
         <div nz-row nzJustify="space-around">
             <!--cards-->
-            <div *ngFor="let prod of products" nz-col nzSpan="5"  >
+            <div *ngFor="let prod of products" nz-col [nzXl]="{ span: 5}" [nzLg]="{ span: 7}" [nzMd]="{ span: 10}"  [nzSm]="{ span: 11}" [nzXs]="{ span: 22}" >
                 <nz-ribbon nzText="New" >
                     <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" (mouseover)="show = true" (mouseout)="show = false" routerLink='/product/{{prod.id}}'>
                         <nz-card-meta
