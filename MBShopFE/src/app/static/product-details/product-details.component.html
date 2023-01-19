@@ -1,8 +1,8 @@
 <div nz-row nzJustify="start">
-    <div nz-col nzSpan="2"></div>
-    <div nz-col nzSpan="20">
-        <div nz-row nzJustify="start">
-            <div nz-col nzSpan="14">
+    <div nz-col [nzLg]="{ span: 2}" [nzSm]="{ span: 1}" [nzXs]="{ span: 0}"></div>
+    <div nz-col [nzLg]="{ span: 20}" [nzSm]="{ span: 22}" [nzXs]="{ span: 24}">
+        <div nz-row nzJustify="center">
+            <div nz-col   [nzSm]="{ span: 14}" [nzXs]="{ span: 24}">
                 <img [src]="createImgPath(mainProductImage)" alt="" srcset="" class="bigImage">
                 <div nz-row nzJustify="space-around">
                     <div nz-col nzSpan="5"  *ngFor="let prodImg of productImagesUrl | slice:0:4">
@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            <div nz-col nzSpan="10" class="right-side">
+            <div nz-col   [nzSm]="{ span: 10}" [nzXs]="{ span: 24}" class="right-side">
                 
                 <!--label-->
                 <h1 class="label">{{product.label}}</h1>
@@ -52,28 +52,28 @@
             </div>
         </div>
         <div class="line"></div>
-        <div>
-            <nz-tabset nzCentered>
+        <div nz-row nzJustify="center">
+            <nz-tabset nzCentered nz-col [nzLg]="{ span: 20}" [nzSm]="{ span: 22}" [nzXs]="{ span: 23}">
                 <nz-tab nzTitle="DESCRIPTION">
                     <p>Achetez en ligne des bottes femme en ligne Maroc confortables et parfaites pour les deux saisons hiver et printemps, optez pour ce modèle à la fois chic et tendance. Disponibles pour la vente en détails et en gros sur machaussure.ma.</p>
                 </nz-tab>
                 <nz-tab nzTitle="INFORMATIONS COMPLÉMENTAIRES">
                     <div nz-row nzJustify="center">
-                        <div nz-col nzSpan="4">Couleur</div>
-                        <div nz-col nzSpan="4"></div>
-                        <div nz-col nzSpan="4" style="text-align: right;"><span *ngFor="let color of colors">{{color.label}}, </span></div>
+                        <div nz-col  [nzSm]="{ span: 4}" [nzXs]="{ span: 2}">Couleur</div>
+                        <div nz-col  [nzSm]="{ span: 4}" [nzXs]="{ span: 1}"></div>
+                        <div nz-col  [nzSm]="{ span: 8}" [nzXs]="{ span: 21}" style="text-align: right;"><span *ngFor="let color of colors">{{color.label}}, </span></div>
                     </div>
                     <div nz-row nzJustify="center">
-                        <div nz-col nzSpan="12">
+                        <div nz-col [nzSm]="{ span: 16}" [nzXs]="{ span: 24}">
                             <div class="line"></div>
                         </div>
                     </div>
                     
                     <div nz-row nzJustify="center">
                         
-                        <div nz-col nzSpan="4">Tailles</div>
-                        <div nz-col nzSpan="4"></div>
-                        <div nz-col nzSpan="4" style="text-align: right;"><span *ngFor="let taille of tailles">{{taille.label}}, </span></div>
+                        <div nz-col [nzSm]="{ span: 4}" [nzXs]="{ span: 2}">Tailles</div>
+                        <div nz-col [nzSm]="{ span: 4}" [nzXs]="{ span: 1}"></div>
+                        <div nz-col [nzSm]="{ span: 8}" [nzXs]="{ span: 21}" style="text-align: right;"><span *ngFor="let taille of tailles">{{taille.label}}, </span></div>
                     </div>
                 </nz-tab>
             </nz-tabset>
@@ -83,7 +83,7 @@
             <h2>Vous pouvez aimer ...</h2>
             <div nz-row nzJustify="space-between">
                 <!--cards-->
-                <div nz-col nzSpan="4" *ngFor="let prod of products | slice:0:5" >
+                <div nz-col [nzMd]="{ span: 4}" [nzSm]="{ span: 9}" *ngFor="let prod of products | slice:0:5" >
                     <a href='/product/{{prod.id}}' (click)="getProduct(prod.id)">
                         <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
                             <nz-card-meta
@@ -102,5 +102,5 @@
         
 
     </div>
-    <div nz-col nzSpan="2"></div>
+    <div nz-col [nzLg]="{ span: 2}" [nzSm]="{ span: 1}" [nzXs]="{ span: 0}"></div>
 </div>

@@ -30,3 +30,49 @@ img{
 .pointure{
     margin-bottom: 30px;
 }
+
+@media (max-width: 1072px) {
+    .label{
+        font-size: 45px;
+    }
+}
+@media (max-width: 855px) {
+    .label{
+        font-size: 35px;
+    }
+    .right-side{
+        padding-left: 5px;
+    }
+    .price{
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .couleur{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .pointure{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 615px) {
+    .label{
+        font-size: 25px;
+    }
+    .right-side{
+        padding-left: 2px;
+    }
+    .price{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .couleur{
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    .pointure{
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+}
