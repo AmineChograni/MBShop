@@ -1,7 +1,7 @@
 <section class="contact-section" id="CONTACT">
   <div nz-row nzJustify="center" >
-    <div nz-col nzSpan="1"></div>
-    <div nz-col nzSpan="8" class="lift-side">
+    <div nz-col [nzLg]="{ span: 1}" [nzMd]="{ span: 1}" [nzSm]="{ span: 4}" [nzXs]="{ span: 1}"></div>
+    <div nz-col [nzLg]="{ span: 8}" [nzMd]="{ span: 12}" [nzSm]="{ span: 16}" [nzXs]="{ span: 22}" class="lift-side">
         <h2 class="title">contacter</h2>
         <!-- Form -->
         <form nz-form [formGroup]="validateForm" class="contact-form" (ngSubmit)="submitForm()">
@@ -35,7 +35,7 @@
       </form>
       <!-- End Form -->
     </div>
-    <div nz-col nzSpan="3"></div>
-    <div nz-col nzSpan="12" class="right-side"></div>
+    <div nz-col [nzLg]="{ span: 3}" [nzMd]="{ span: 1}" [nzSm]="{ span: 4}" [nzXs]="{ span: 1}"></div>
+    <div nz-col [nzLg]="{ span: 12}" [nzMd]="{ span: 10}" [nzSm]="{ span: 0}" [nzXs]="{ span: 0}" class="right-side"></div>
   </div>
 </section>
