@@ -41,6 +41,52 @@
     margin-left: 50px;
     margin-right: 50px;
 }
+.prodDD{
+    text-align: right;
+}
+.prodDDD{
+    text-align: left;
+}
 #submit{
     background-color: #000000;
+}
+
+@media (max-width: 927px) {
+    .commandeD{
+        margin: 20px;
+    }
+    .prodD{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .line{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .commandeD{
+        margin: 50px;
+    }
+    .prodD{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .line{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+@media (max-width: 568px) {
+    .commandeD{
+        margin: 20px;
+    }
+    .prodD{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .line{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }

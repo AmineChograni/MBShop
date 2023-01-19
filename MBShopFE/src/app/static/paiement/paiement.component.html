@@ -5,100 +5,100 @@
     </div>
 
 </div>
-<div nz-row nzJustify="start" class="all">
-    <div nz-col nzSpan="2"></div>
-    <div nz-col nzSpan="10" class="facturation">
+<div nz-row nzJustify="center" class="all">
+    <div nz-col [nzXl]="{ span: 2}" [nzMd]="{ span: 1}" [nzSm]="{ span: 0}" [nzXs]="{ span: 0}"></div>
+    <div nz-col [nzXl]="{ span: 10}" [nzMd]="{ span: 11}"  [nzSm]="{ span: 20}" [nzXs]="{ span: 23}" class="facturation">
         <h1>DÉTAILS DE FACTURATION</h1>
         <form nz-form (ngSubmit)="submitForm()" [formGroup]="commForm" id="sheetdb">
-            <nz-form-label [nzSpan]="10" nzFor="name">Nom complet - الإسم الكامل <span style="color: red;">*</span></nz-form-label>
+            <nz-form-label [nzXl]="{ span: 10}" [nzSm]="{ span: 20}" nzFor="name">Nom complet - الإسم الكامل <span style="color: red;">*</span></nz-form-label>
             <nz-form-item>
-              <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzSpan]="14" >
+              <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzXl]="{ span: 14}" [nzSm]="{ span: 20}">
                 <input nz-input formControlName="name" name="name" type="text" id="name" nzSize="large">
               </nz-form-control>
             </nz-form-item >
 
-            <nz-form-label [nzSpan]="10" nzFor="tele">Téléphone <span style="color: red;">*</span></nz-form-label>
+            <nz-form-label [nzXl]="{ span: 10}" [nzSm]="{ span: 20}" nzFor="tele">Téléphone <span style="color: red;">*</span></nz-form-label>
             <nz-form-item>
-              <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzSpan]="14">
+              <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzXl]="{ span: 14}" [nzSm]="{ span: 20}">
                 <input nz-input formControlName="tele" name="tele" type="number" id="tele" nzSize="large">
               </nz-form-control>
             </nz-form-item >
 
-            <nz-form-label [nzSpan]="10" nzFor="adr">Adresse complète - العنوان الكامل <span style="color: red;">*</span></nz-form-label>
+            <nz-form-label [nzXl]="{ span: 10}" [nzSm]="{ span: 20}" nzFor="adr">Adresse complète - العنوان الكامل <span style="color: red;">*</span></nz-form-label>
             <nz-form-item>
-              <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzSpan]="14">
+              <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzXl]="{ span: 14}" [nzSm]="{ span: 20}">
                 <input nz-input formControlName="adr"  name="adr" type="text" id="adr" nzSize="large" placeholder="Numéro de voie et nom de la rue">
               </nz-form-control>
             </nz-form-item >
 
-            <nz-form-label [nzSpan]="10" nzFor="ville">la ville - المدينة <span style="color: red;">*</span></nz-form-label>
+            <nz-form-label [nzXl]="{ span: 10}" [nzSm]="{ span: 20}" nzFor="ville">la ville - المدينة <span style="color: red;">*</span></nz-form-label>
             <nz-form-item>
-              <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzSpan]="14">
+              <nz-form-control nzErrorTip="Ce champ ne doit pas etre vide" [nzXl]="{ span: 14}" [nzSm]="{ span: 20}">
                 <input nz-input formControlName="ville" name="ville" type="text" id="ville" nzSize="large">
               </nz-form-control>
             </nz-form-item >
 
-            <nz-form-label [nzSpan]="10" nzFor="codep">Code postal (facultatif)</nz-form-label>
+            <nz-form-label [nzXl]="{ span: 10}" [nzSm]="{ span: 20}" nzFor="codep">Code postal (facultatif)</nz-form-label>
             <nz-form-item>
-              <nz-form-control  [nzSpan]="14">
+              <nz-form-control  [nzXl]="{ span: 14}" [nzSm]="{ span: 20}">
                 <input nz-input formControlName="codep" name="codep" type="text" id="codep" nzSize="large">
               </nz-form-control>
             </nz-form-item >
 
-            <nz-form-label [nzSpan]="10" nzFor="email">Adresse Email (facultatif)</nz-form-label>
+            <nz-form-label [nzXl]="{ span: 10}" [nzSm]="{ span: 20}" nzFor="email">Adresse Email (facultatif)</nz-form-label>
             <nz-form-item>
-                <nz-form-control [nzSpan]="14" >
+                <nz-form-control [nzXl]="{ span: 14}" [nzSm]="{ span: 20}" >
                     <input nz-input formControlName="email" name="email" type="email" id="email" nzSize="large">
                 </nz-form-control>
             </nz-form-item >
 
             <nz-form-item>
-                <nz-form-control [nzSpan]="14">
+                <nz-form-control [nzXl]="{ span: 14}" [nzSm]="{ span: 20}">
                   <button nz-button nzType="primary"  id="submit" nzBlock nzSize="large" >COMMANDER</button>
                 </nz-form-control>
             </nz-form-item>
         </form>
     </div>
-    <div nz-col nzSpan="10" class="vcommande">
+    <div nz-col [nzXl]="{ span: 10}" [nzMd]="{ span: 11}" [nzSm]="{ span: 20}" [nzXs]="{ span: 23}" class="vcommande">
         <h1>VOTRE COMMANDE</h1>
         <div class="commandeD">
           <img [src]="createImgPath(prodImg)" alt="" srcset="" class="prodImage">
           <div class="line"></div>
           <div nz-row nzJustify="space-between" class="prodD">
-            <div nz-col nzSpan="4">PRODUIT</div>
-            <div nz-col nzSpan="10">{{prodName}}</div>
+            <div nz-col [nzLg]="{ span: 4}" [nzSm]="{ span: 5}" class="prodDDD">PRODUIT</div>
+            <div nz-col [nzLg]="{ span: 10}" [nzSm]="{ span: 16}" class="prodDD" >{{prodName}}</div>
           </div>
           <div class="line"></div>
           <div nz-row nzJustify="space-between" class="prodD" >
-            <div nz-col nzSpan="4">Prix</div>
-            <div nz-col nzSpan="10">{{prodPrice}} MAD</div>
+            <div nz-col [nzLg]="{ span: 4}" [nzSm]="{ span: 5}" class="prodDDD">Prix</div>
+            <div nz-col [nzLg]="{ span: 10}" [nzSm]="{ span: 16}" class="prodDD">{{prodPrice}} MAD</div>
           </div>
           <div class="line"></div>
           <div nz-row nzJustify="space-between" class="prodD" >
-            <div nz-col nzSpan="4">Quantité</div>
-            <div nz-col nzSpan="10">{{prodQuantity}}</div>
+            <div nz-col [nzLg]="{ span: 4}" [nzSm]="{ span: 5}" class="prodDDD">Quantité</div>
+            <div nz-col [nzLg]="{ span: 10}" [nzSm]="{ span: 16}" class="prodDD">{{prodQuantity}}</div>
           </div>
           <div class="line"></div>
           <div nz-row nzJustify="space-between" class="prodD">
-            <div nz-col nzSpan="4">Pointure</div>
-            <div nz-col nzSpan="10">{{prodPoint}}</div>
+            <div nz-col [nzLg]="{ span: 4}" [nzSm]="{ span: 5}" class="prodDDD">Pointure</div>
+            <div nz-col [nzLg]="{ span: 10}" [nzSm]="{ span: 16}" class="prodDD">{{prodPoint}}</div>
           </div>
           <div class="line"></div>
           <div nz-row nzJustify="space-between" class="prodD">
-            <div nz-col nzSpan="4">Couleur</div>
-            <div nz-col nzSpan="10">{{prodColor}}</div>
+            <div nz-col [nzLg]="{ span: 4}" [nzSm]="{ span: 5}" class="prodDDD">Couleur</div>
+            <div nz-col [nzLg]="{ span: 10}" [nzSm]="{ span: 16}" class="prodDD">{{prodColor}}</div>
           </div>
           <div class="line"></div>
           <div nz-row nzJustify="space-between" class="prodD" >
-            <div nz-col nzSpan="4">Total</div>
-            <div nz-col nzSpan="10">{{total}} MAD</div>
+            <div nz-col [nzLg]="{ span: 4}" [nzSm]="{ span: 5}" class="prodDDD">Total</div>
+            <div nz-col [nzLg]="{ span: 10}" [nzSm]="{ span: 16}" class="prodDD">{{total}} MAD</div>
           </div>
         </div>
         <h4>⇁ Paiement à la livraison.</h4>
-        <h3>Vos données personnelles seront utilisées pour le traitement de votre commande, vous accompagner au cours de votre visite du site web, et pour d’autres raisons décrites dans notre politique de confidentialité.</h3>
+        <h5>Vos données personnelles seront utilisées pour le traitement de votre commande, vous accompagner au cours de votre visite du site web, et pour d’autres raisons décrites dans notre politique de confidentialité.</h5>
 
     </div>
-    <div nz-col nzSpan="2"></div>
+    <div nz-col [nzXl]="{ span: 2}" [nzMd]="{ span: 1}" [nzSm]="{ span: 0}" [nzXs]="{ span: 0}"></div>
 </div>
 
 
