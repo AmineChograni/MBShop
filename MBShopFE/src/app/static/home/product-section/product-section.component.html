@@ -4,16 +4,15 @@
             <h1 class="title">Derniers produits</h1>
 
             <div class="products">
-                <p class="art-title">Hommes</p>
+                <p class="art-title">HOMME</p>
                 <div class="line"></div>
                 <div nz-row nzJustify="space-between">
                     <!-- card -->
                     <div nz-col [nzMd]="{ span: 4}" [nzSm]="{ span: 9}" *ngFor="let prod of prodH | slice:0:5">
-                        <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
-                            <nz-card-meta
-                              nzTitle="{{prod.label}}"
-                            ></nz-card-meta>
-                            <h4 class="PPrice">{{prod.price}} MAD</h4>
+                        <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate">
+                            
+                            <p nz-typography nzEllipsis class="PLabel" nzContent="{{prod.label}}"> </p>
+                            <h4 class="PPrice">{{prod.price}} DH</h4>
                         </nz-card>
                         <ng-template #coverTemplate>
                             <img alt="example" [src]="createImgPath(prod.imageURL)" />
@@ -24,15 +23,13 @@
             </div>
             <!-- 
             <div class="products">
-                <p class="art-title">Femmes</p>
+                <p class="art-title">FEMME</p>
                 <div class="line"></div>
                 <div nz-row nzJustify="space-between">
 
                     <div nz-col [nzMd]="{ span: 4}" [nzSm]="{ span: 9}" *ngFor="let prod of Fprod" >
                         <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
-                            <nz-card-meta
-                              nzTitle="{{prod.PTitle}}"
-                            ></nz-card-meta>
+                            <p nz-typography nzEllipsis class="PLabel" nzContent="{{prod.label}}"> </p>
                             <h4 class="PPrice">{{prod.PPrice}} MAD</h4>
                         </nz-card>
                         <ng-template #coverTemplate>
@@ -44,15 +41,13 @@
             </div>-->
             
             <div class="products">
-                <p class="art-title">Enfants</p>
+                <p class="art-title">ENFANT</p>
                 <div class="line"></div>
                 <div nz-row nzJustify="space-between">
                     <!-- card -->
                     <div nz-col [nzMd]="{ span: 4}" [nzSm]="{ span: 9}" *ngFor="let prod of prodE | slice:0:5">
                         <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
-                            <nz-card-meta
-                              nzTitle="{{prod.label}}"
-                            ></nz-card-meta>
+                            <p nz-typography nzEllipsis class="PLabel" nzContent="{{prod.label}}"> </p>
                             <h4 class="PPrice">{{prod.price}} MAD</h4>
                         </nz-card>
                         <ng-template #coverTemplate>

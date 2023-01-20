@@ -22,6 +22,7 @@ img{
 .price{
     font-size: 30px;
     margin-bottom: 50px;
+    color: red;
 }
 
 .couleur{
@@ -30,7 +31,20 @@ img{
 .pointure{
     margin-bottom: 30px;
 }
-
+.PLabel{
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'lora', 'sans-serif';
+}
+.PPrice{
+    text-align: center;
+    font-size: 20px;
+    color: red;
+    margin-top: 15px;
+}
+.btnachat{
+    width: 300px;
+}
 @media (max-width: 1072px) {
     .label{
         font-size: 45px;

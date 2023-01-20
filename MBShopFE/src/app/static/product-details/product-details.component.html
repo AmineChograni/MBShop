@@ -15,7 +15,7 @@
                 <!--label-->
                 <h1 class="label">{{product.label}}</h1>
                 <!--price-->
-                <h2 class="price">{{product.price}} MAD</h2>
+                <h2 class="price">{{product.price}},00 DH</h2>
 
                 
                 <!--colors-->
@@ -44,7 +44,7 @@
 
                 <div nz-row nzJustify="start">
                     <nz-input-number [(ngModel)]="demoValue" nzSize="large" [nzMin]="1" [nzMax]="10" [nzStep]="1"></nz-input-number>
-                    <button nz-button nzSize="large" nzType="primary" (click)="goPaiment()">
+                    <button nz-button nzSize="large" nzType="primary" (click)="goPaiment()" class="btnachat">
                          <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;J'ACHETE
                     </button>
                 </div>
@@ -86,10 +86,8 @@
                 <div nz-col [nzMd]="{ span: 4}" [nzSm]="{ span: 9}" *ngFor="let prod of products | slice:0:5" >
                     <a href='/product/{{prod.id}}' (click)="getProduct(prod.id)">
                         <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
-                            <nz-card-meta
-                              nzTitle={{prod.label}}
-                            ></nz-card-meta>
-                            <h4 class="PPrice">{{prod.price}} MAD</h4>
+                            <p nz-typography nzEllipsis class="PLabel" nzContent="{{prod.label}}"> </p>
+                            <h4 class="PPrice">{{prod.price}} DH</h4>
                         </nz-card>
                     </a>
                     <ng-template #coverTemplate>

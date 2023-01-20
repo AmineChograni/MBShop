@@ -50,7 +50,13 @@
 #submit{
     background-color: #000000;
 }
-
+button{
+    background-color: black;
+    border-color: black;
+}
+button:hover {
+    background-color: black;
+}
 @media (max-width: 927px) {
     .commandeD{
         margin: 20px;

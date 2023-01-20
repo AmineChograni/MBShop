@@ -19,6 +19,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
     NzSelectModule,
     NzRadioModule,
     NzImageModule,
-    NzAlertModule
+    NzAlertModule,
+    NzTypographyModule
     
   ]
 })

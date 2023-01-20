@@ -17,6 +17,7 @@ import { ProductSectionComponent } from './product-section/product-section.compo
 import { AboutSectionComponent } from './about-section/about-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
 
 
 
@@ -33,7 +34,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     NzFormModule,
     ReactiveFormsModule,
     NzIconModule,
-    NzToolTipModule
+    NzToolTipModule,
+    NzTypographyModule
   ]
 })
 export class HomeModule { }
