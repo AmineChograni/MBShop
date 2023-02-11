@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MBShopBE.Models.Repositories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MBShopBE.Controllers
@@ -7,5 +8,11 @@ namespace MBShopBE.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly IUserRepository repository;
+
+        public AuthController(IUserRepository repository)
+        {
+            this.repository = repository;
+        }
     }
 }
