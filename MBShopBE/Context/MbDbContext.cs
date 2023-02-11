@@ -19,6 +19,16 @@ namespace MBShopBE.Context
         public DbSet<Taille> Tailles { get; set; }
         public DbSet<ProdImage> ProdImages { get; set; }
         public DbSet<MImage> MImages { get; set; }
+        public DbSet<User> Users { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.HasIndex(e => e.Email).IsUnique();
+            });
+        }
 
     }
 }
