@@ -23,9 +23,13 @@ namespace MBShopBE
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+
         }
 
         public IConfiguration Configuration { get; }
@@ -38,6 +42,16 @@ namespace MBShopBE
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MBShopBE", Version = "v1" });
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  policy =>
+                                  {
+                                      policy.WithOrigins("https://aminechograni-001-site1.dtempurl.com/",
+                                                          "https://www.mbshop.ma");
+                                  });
             });
 
             services.AddDbContext<MbDbContext>(options =>
@@ -76,11 +90,13 @@ namespace MBShopBE
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
 
 
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {

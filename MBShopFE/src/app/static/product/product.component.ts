@@ -29,7 +29,7 @@ export class ProductComponent implements OnInit{
   constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService) { }
 
   public createImgPath = (serverPath: string) => { 
-    return `https://localhost:44353/${serverPath}`; 
+    return `https://aminechograni-001-site1.dtempurl.com/${serverPath}`; 
   }
 
 

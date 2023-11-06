@@ -18,7 +18,7 @@ export class ProductSectionComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   public createImgPath = (serverPath: string) => { 
-    return `https://localhost:44353/${serverPath}`; 
+    return `https://aminechograni-001-site1.dtempurl.com/${serverPath}`; 
   }
 
   ngOnInit(): void {

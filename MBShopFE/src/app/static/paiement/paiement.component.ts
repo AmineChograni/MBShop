@@ -28,7 +28,7 @@ export class PaiementComponent implements OnInit {
   constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService,private modal: NzModalService) { }
 
   public createImgPath = (serverPath: String) => { 
-    return `https://localhost:44353/${serverPath}`; 
+    return `https://aminechograni-001-site1.dtempurl.com/${serverPath}`; 
   }
 
   ngOnInit(): void {
