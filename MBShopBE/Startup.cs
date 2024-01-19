@@ -90,6 +90,7 @@ namespace MBShopBE
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
 
 
             app.UseRouting();

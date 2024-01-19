@@ -9,7 +9,7 @@
                 <div nz-row nzJustify="space-between">
                     <!-- card -->
                     <div nz-col [nzMd]="{ span: 4}" [nzSm]="{ span: 9}" *ngFor="let prod of prodH | slice:0:5">
-                        <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate">
+                        <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" routerLink='/product/{{prod.id}}'>
                             
                             <p nz-typography nzEllipsis class="PLabel" nzContent="{{prod.label}}"> </p>
                             <h4 class="PPrice">{{prod.price}} DH</h4>
@@ -22,6 +22,7 @@
                 </div>
             </div>
             <!-- 
+                test
             <div class="products">
                 <p class="art-title">FEMME</p>
                 <div class="line"></div>
@@ -46,7 +47,7 @@
                 <div nz-row nzJustify="space-between">
                     <!-- card -->
                     <div nz-col [nzMd]="{ span: 4}" [nzSm]="{ span: 9}" *ngFor="let prod of prodE | slice:0:5">
-                        <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" >
+                        <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" routerLink='/product/{{prod.id}}'>
                             <p nz-typography nzEllipsis class="PLabel" nzContent="{{prod.label}}"> </p>
                             <h4 class="PPrice">{{prod.price}} MAD</h4>
                         </nz-card>
