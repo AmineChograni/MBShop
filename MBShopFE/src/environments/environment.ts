@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
 
-  baseUrl: 'https://aminechograni-001-site1.dtempurl.com/api'
+  //baseUrl: 'https://aminechograni-001-site1.dtempurl.com/api'
+  baseUrl: 'https://localhost:44353/api'
 };
 
 /*

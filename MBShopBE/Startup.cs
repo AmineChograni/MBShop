@@ -56,7 +56,7 @@ namespace MBShopBE
 
             services.AddDbContext<MbDbContext>(options =>
                     options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("LocalConnection")));
 
             services.Configure<FormOptions>(o =>
             {
