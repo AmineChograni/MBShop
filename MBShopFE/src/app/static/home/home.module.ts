@@ -9,6 +9,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
@@ -35,7 +36,8 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
     ReactiveFormsModule,
     NzIconModule,
     NzToolTipModule,
-    NzTypographyModule
+    NzTypographyModule,
+    NzSkeletonModule
   ]
 })
 export class HomeModule { }

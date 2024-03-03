@@ -15,15 +15,18 @@ export class ProductSectionComponent implements OnInit {
   prodH: Product[] = [];
   prodE:  Product[] = [];
 
+  loading = true;
+
   constructor(private productService: ProductService) { }
 
   public createImgPath = (serverPath: string) => { 
-    return `https://aminechograni-001-site1.dtempurl.com/${serverPath}`; 
+    return `https://localhost:44353/${serverPath}`; 
   }
 
   ngOnInit(): void {
 
     this.productService.getProducts().subscribe(data => {
+      this.loading = false;
       this.products=data;
       
       
@@ -35,7 +38,6 @@ export class ProductSectionComponent implements OnInit {
           this.prodH.push(product);
         }
       }
-      console.log(this.prodE);
       
     })
 
