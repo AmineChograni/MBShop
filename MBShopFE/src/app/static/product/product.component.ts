@@ -25,6 +25,8 @@ export class ProductComponent implements OnInit{
   category: Category;
   allCategories : Category[]=[];
 
+  loading = true;
+
 
   constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService) { }
 
@@ -40,7 +42,9 @@ export class ProductComponent implements OnInit{
     this.categoryId = this.router.snapshot.params['id'];
 
     this.productService.getProductByCategoriesId(this.categoryId).subscribe(data => {
+      
       this.category=data;
+      this.loading = false;
       this.products=this.category.products;
     })
     
@@ -60,9 +64,11 @@ export class ProductComponent implements OnInit{
   }
 
   Search(){
+    this.loading = true;
     if(this.search != ""){
       this.productService.getProductByCategoriesIdFilterLabel(this.categoryId,this.search).subscribe(data =>{
         this.category=data;
+        this.loading = false;
         this.products=this.category.products;
       })
 

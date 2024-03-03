@@ -32,6 +32,8 @@ export class ProductDetailsComponent implements OnInit {
   mainProductImage:String;
   productImagesUrl:String[]=[];
   categoryId:Number;
+
+  loading = true;
   
 
   constructor(private titleService: Title,private router:ActivatedRoute,private route : Router,private productService: ProductService) { }
@@ -56,6 +58,7 @@ export class ProductDetailsComponent implements OnInit {
 
   getProduct(prodId:Number){
     this.productService.getProductById(prodId).subscribe(data => {
+      this.loading = false;
       this.product=data;
       this.categoryId=this.product.categoryId;
       this.tailles=this.product.tailles;
@@ -74,6 +77,7 @@ export class ProductDetailsComponent implements OnInit {
       
       
       this.getRelativeProducts(this.categoryId);
+      
     })
   }
 

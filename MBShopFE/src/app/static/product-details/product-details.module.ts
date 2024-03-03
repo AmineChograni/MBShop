@@ -20,6 +20,7 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
     NzRadioModule,
     NzImageModule,
     NzAlertModule,
-    NzTypographyModule
+    NzTypographyModule,
+    NzSkeletonModule
     
   ]
 })

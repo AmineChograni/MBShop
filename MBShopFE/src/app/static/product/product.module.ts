@@ -16,6 +16,7 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { FormsModule } from '@angular/forms';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
     NzRadioModule,
     NzInputModule,
     FormsModule,
-    NzTypographyModule
+    NzTypographyModule,
+    NzSkeletonModule
   ]
 })
 export class ProductModule { }
