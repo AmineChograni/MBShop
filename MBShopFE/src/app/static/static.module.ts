@@ -14,10 +14,11 @@ import { PolitiqueComponent } from './politique/politique.component';
 import { ConfidentialiteComponent } from './confidentialite/confidentialite.component';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
-  declarations: [StaticComponent, NavbarComponent, FooterComponent, PolitiqueComponent, ConfidentialiteComponent],
+  declarations: [StaticComponent, NavbarComponent, FooterComponent, PolitiqueComponent, ConfidentialiteComponent, AboutComponent],
   imports: [
     CommonModule,
     StaticRoutingModule,
