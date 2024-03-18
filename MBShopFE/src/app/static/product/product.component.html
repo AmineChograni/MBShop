@@ -39,7 +39,7 @@
                 <nz-ribbon nzText="New" >
                     <nz-card nzHoverable style="width:100%;" [nzCover]="coverTemplate" (mouseover)="show = true" (mouseout)="show = false" routerLink='/product/{{prod.id}}'>
                         <p nz-typography nzEllipsis class="PLabel" nzContent="{{prod.label}}"> </p>
-                        <div nz-row nzJustify="start">
+                        <div nz-row nzJustify="center">
                             <div *ngFor="let taille of prod.tailles" nz-col nzSpan="4" class="squir-size">{{taille.label}}</div>
                         </div>
                         <h4 class="PPrice">{{prod.price}} DH</h4>
