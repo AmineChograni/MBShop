@@ -15,10 +15,11 @@ import { ConfidentialiteComponent } from './confidentialite/confidentialite.comp
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
-  declarations: [StaticComponent, NavbarComponent, FooterComponent, PolitiqueComponent, ConfidentialiteComponent, AboutComponent],
+  declarations: [StaticComponent, NavbarComponent, FooterComponent, PolitiqueComponent, ConfidentialiteComponent, AboutComponent, LoginComponent],
   imports: [
     CommonModule,
     StaticRoutingModule,

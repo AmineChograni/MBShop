@@ -4,6 +4,7 @@ import { StaticComponent } from './static.component';
 import { PolitiqueComponent } from './../static/politique/politique.component';
 import { ConfidentialiteComponent } from './../static/confidentialite/confidentialite.component';
 import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,9 @@ const routes: Routes = [
       { path: "paiement", loadChildren: () => import('./paiement/paiement.module').then(mod => mod.PaiementModule) },
       { path: "politique dechange",component: PolitiqueComponent },
       { path: "confidentialite",component: ConfidentialiteComponent },
-      { path: "about",component: AboutComponent }
+      { path: "about",component: AboutComponent },
+      { path: "mohamedtasjil",component: LoginComponent },
+      { path: "idaratesebate23", loadChildren: () => import('./dash/dash.module').then(mod => mod.DashModule) },
     ]
   },
 ];
