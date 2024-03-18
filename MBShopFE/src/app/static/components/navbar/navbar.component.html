@@ -3,7 +3,7 @@
   <div class="topnav" id="myTopnav">
     <a href="#" class="active"><img src="../../../../assets/images/websitelogo.svg" alt="" srcset="" style="height: 25px; width: 90px;object-fit: cover;"></a>
     <a nz-dropdown [nzDropdownMenu]="menu">
-      HOMME
+      HOMMES
       <i class="fa fa-angle-down" aria-hidden="true"></i>
     </a>
     <nz-dropdown-menu #menu="nzDropdownMenu">
@@ -11,9 +11,9 @@
         <li *ngFor="let caty of categoryH" nz-menu-item ><a href='/products/{{caty.id}}'> {{ caty.label }} </a></li>
       </ul>
     </nz-dropdown-menu>
-    <a href="#">FEMME</a>
+    <a href="#">FEMMES</a>
     <a nz-dropdown [nzDropdownMenu]="menu1">
-      ENFANT
+      ENFANTS
       <i class="fa fa-angle-down" aria-hidden="true"></i>
     </a>
     <nz-dropdown-menu #menu1="nzDropdownMenu">
