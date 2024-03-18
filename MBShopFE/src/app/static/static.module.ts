@@ -16,6 +16,8 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { NzFormModule } from 'ng-zorro-antd/form';
 
 
 @NgModule({
@@ -27,7 +29,10 @@ import { LoginComponent } from './login/login.component';
     NzLayoutModule,
     NzButtonModule,
     NzDropDownModule,
-    NzTypographyModule
+    NzTypographyModule,
+    FormsModule,
+    NzFormModule,
+    ReactiveFormsModule
   ]
 })
 export class StaticModule { }

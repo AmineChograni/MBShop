@@ -1,1 +1,32 @@
-<p>login works!</p>
+<section class="contact-section" id="CONTACT">
+    <div nz-row nzJustify="center" >
+      <div nz-col [nzLg]="{ span: 1}" [nzMd]="{ span: 1}" [nzSm]="{ span: 4}" [nzXs]="{ span: 1}"></div>
+      <div nz-col [nzLg]="{ span: 8}" [nzMd]="{ span: 12}" [nzSm]="{ span: 16}" [nzXs]="{ span: 22}" class="lift-side">
+          <h2 class="title">Dashboard login</h2>
+          <!-- Form -->
+          <form nz-form [formGroup]="validateForm" class="contact-form" (ngSubmit)="submitForm()">
+
+            <nz-form-item>
+                <nz-form-control [nzSpan]="24" nzHasFeedback [nzErrorTip]="emailErrorTpl">
+                    <input nz-input formControlName="email" placeholder="email" id="email" type="email" />
+                    <ng-template #emailErrorTpl let-control>
+                        <ng-container *ngIf="control.hasError('email')">The input is not valid E-mail!</ng-container>
+                        <ng-container *ngIf="control.hasError('required')">Please input your E-mail!</ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control nzHasFeedback [nzSpan]="24" nzErrorTip="Please input your Password!">
+                  <input nz-input formControlName="password" id="password" type="password" placeholder="password" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <button nz-button [nzType]="'primary'" style="margin-bottom: 10px;">Login</button>
+        </form>
+        <!-- End Form -->
+      </div>
+      <div nz-col [nzLg]="{ span: 3}" [nzMd]="{ span: 1}" [nzSm]="{ span: 4}" [nzXs]="{ span: 1}"></div>
+      <div nz-col [nzLg]="{ span: 12}" [nzMd]="{ span: 10}" [nzSm]="{ span: 0}" [nzXs]="{ span: 0}" class="right-side"></div>
+    </div>
+  </section>
+  
