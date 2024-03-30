@@ -4,7 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 
-  { path: '', loadChildren: () => import('./static/static.module').then(mod => mod.StaticModule) }
+  { path: '', loadChildren: () => import('./static/static.module').then(mod => mod.StaticModule) },
+  { path: "idaratesebate23", loadChildren: () => import('./dash/dash.module').then(mod => mod.DashModule) },
 
 ];
 

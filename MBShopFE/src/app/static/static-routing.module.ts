@@ -20,7 +20,7 @@ const routes: Routes = [
       { path: "confidentialite",component: ConfidentialiteComponent },
       { path: "about",component: AboutComponent },
       { path: "mohamedtasjil",component: LoginComponent },
-      { path: "idaratesebate23", loadChildren: () => import('./dash/dash.module').then(mod => mod.DashModule) },
+      
     ]
   },
 ];

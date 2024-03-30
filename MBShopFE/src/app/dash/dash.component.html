@@ -1,0 +1,29 @@
+<nz-layout class="layout">
+    <nz-sider>
+      <div class="logo">
+        <img src="../../../assets/images/websitelogo.svg" alt="" srcset="">
+      </div>
+      <ul nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item routerLink="/idaratesebate23">
+          <span>Produits</span>
+        </li>
+        <li nz-menu-item routerLink="/idaratesebate23/category">
+          <span>Categories</span>
+        </li>
+        <li nz-menu-item routerLink="/idaratesebate23/group">
+          <span>Groups</span>
+        </li>
+        <li nz-menu-item routerLink="/idaratesebate23/commandes">
+          <span>Commandes</span>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout class="right-layout">
+      <nz-content>
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+      <nz-footer>MBSHOP @2024 By AMINE CHOGRANI</nz-footer>
+    </nz-layout>
+  </nz-layout>

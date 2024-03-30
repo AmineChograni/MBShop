@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MBShopBE.Context;
 using MBShopBE.Models;
+using Microsoft.CodeAnalysis;
 
 namespace MBShopBE.Controllers
 {
@@ -25,7 +26,37 @@ namespace MBShopBE.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            return await _context.Products.ToListAsync();
+            var products = await _context.Products.ToListAsync();
+            foreach(var product in products)
+            {
+                var prodImages = _context.ProdImages.ToList();
+                foreach (var prodImage in prodImages)
+                {
+                    if (prodImage.ProductId == product.Id)
+                    {
+                        product.ProdImages.Add(prodImage);
+                    }
+                } 
+
+                var prodTailles = _context.Tailles.ToList();
+                foreach (var prodTaille in prodTailles)
+                {
+                    if (prodTaille.ProductId == product.Id)
+                    {
+                        product.Tailles.Add(prodTaille);
+                    }
+                }
+
+                var colors = _context.Couleurs.ToList();
+                foreach (var color in colors)
+                {
+                    if (color.ProductId == product.Id)
+                    {
+                        product.Couleurs.Add(color);
+                    }
+                }
+            }
+            return products;
         }
 
 
