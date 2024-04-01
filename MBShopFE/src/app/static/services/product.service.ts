@@ -23,6 +23,14 @@ export class ProductService{
         return this.httpClient.get<any>(`${this.productApi}/product`)
     }
 
+    postProduct(product:Product):Observable<any>{
+        return this.httpClient.post<any>(`${this.productApi}/product`,product);
+    }
+
+    getAllCategoriesId(): Observable<any>{
+        return this.httpClient.get<any>(`${this.productApi}/categories}`)
+    }
+
 
 
     getCategoriesByGroupId(groupId: Number): Observable<any>{

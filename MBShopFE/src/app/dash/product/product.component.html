@@ -1,6 +1,34 @@
 <div nz-row nzJustify="start">
-    <div nz-col nzSpan="5"><button nz-button nzType="primary">Ajouter Produit</button></div>
+    <a routerLink="/idaratesebate23/addprod"><button nz-button [nzType]="'primary'"><span>Ajouter Produit</span></button></a>
 </div>
 <div nz-row nzJustify="start">
-    <div nz-col nzSpan="20"></div>
+    <div nz-col nzSpan="20">
+        <nz-table #basicTable [nzData]="products">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Label</th>
+                <th>Price</th>
+                <th>Colors</th>
+                <th>Tailles</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of basicTable.data">
+                <td><img nz-image alt="example" [nzSrc]="createImgPath(product.imageURL)" class="productImage"/></td>
+                <td>{{ product.label }}</td>
+                <td>{{ product.price }}MAD</td>
+                <td><span *ngFor="let color of product.couleurs">{{color.label}} ,</span></td>
+                <td><span *ngFor="let taille of product.tailles">{{taille.label}} ,</span></td>
+                <td>
+                  <a>Delete</a>
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+    </div>
 </div>
+
+
+

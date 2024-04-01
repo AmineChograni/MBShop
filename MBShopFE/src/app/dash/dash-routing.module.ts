@@ -5,6 +5,7 @@ import { ProductComponent } from './product/product.component';
 import { CategoryComponent } from './category/category.component';
 import { GroupComponent } from './group/group.component';
 import { CommandesComponent } from './commandes/commandes.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: "category",component: CategoryComponent },
       { path: "group",component: GroupComponent },
       { path: "commandes",component: CommandesComponent },
+      { path: "addprod",component: AddProductComponent },
     ]
   }
 ];

@@ -1,0 +1,55 @@
+<!-- Step 1: Ajouter produit details -->
+<div *ngIf="currentStep === 1"  >
+    <h2 >Ajouter produit details</h2>
+
+    <form nz-form [formGroup]="firstForm"  (ngSubmit)="submitFirstForm()">
+        <nz-form-item >
+            <nz-form-label [nzSm]="6" nzFor="productName">Nom de produit<span style="color: red;">*</span></nz-form-label>
+            <nz-form-control  [nzSm]="10" nzErrorTip="Please input product name!">
+                <input nz-input formControlName="productName" type="text"   name="productName" id="productName" placeholder="Nom de produit"  />
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item >
+            <nz-form-label [nzSm]="6" nzFor="productPrice">Prix de produit<span style="color: red;">*</span></nz-form-label>
+            <nz-form-control  [nzSm]="10" nzErrorTip="Please input product Price!">
+                <input nz-input formControlName="productPrice" type="number"   name="productPrice" id="productPrice" placeholder="Prix de produit"  />
+            </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item >
+            <nz-form-label [nzSm]="6" nzFor="productCategory">Category de produit<span style="color: red;">*</span></nz-form-label>
+            <nz-form-control  [nzSm]="10" nzErrorTip="Please input product category!">
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a category" [(ngModel)]="selectedValue" formControlName="productCategory" name="productCategory" id="productCategory">
+                    <nz-option *ngFor="let category of categories" nzLabel="{{category.label}}" nzValue="{{category.id}}"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+
+        
+
+        <button nz-button  [nzType]="'primary'">Next</button>
+    </form>
+        
+</div>
+  
+<!-- Step 2: produit tailles et colors -->
+<div *ngIf="currentStep === 2" >
+    
+    <h2>produit tailles et colors</h2>
+
+    
+
+    <button nz-button nzType="primary" (click)="prevStep()">Previous</button>
+    <button nz-button nzType="primary" (click)="nextStep()">Next</button>
+</div>
+  
+<!-- Step 3: ajouter produit images par color -->
+<div *ngIf="currentStep === 3"  >
+    
+    <h2>ajouter produit images par color</h2>
+    
+
+    <button nz-button nzType="primary" (click)="prevStep()">Previous</button>
+    <button nz-button nzType="primary" (click)="submitLast()">Submit</button>
+</div>
