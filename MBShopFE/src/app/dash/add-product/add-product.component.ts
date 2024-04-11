@@ -17,9 +17,8 @@ export class AddProductComponent implements OnInit {
 
   imageFile: File;
 
-  products: Product[] = [];
   categories: Category[] = [];
-  lastProduct: Product;
+  productId: Number;
 
   firstForm: FormGroup;
   secondForm: FormGroup;
@@ -54,6 +53,7 @@ export class AddProductComponent implements OnInit {
     if (this.firstForm.valid) {
       let Product = new ProductFP(this.productName,this.productPrice,this.productCategory);
       this.productService.postProductFP(Product).subscribe(data=>{
+        this.productId = data.id
         
       });
       
@@ -67,19 +67,15 @@ export class AddProductComponent implements OnInit {
       });
     }
   }
-  
+
   onFileSelected(event: any) {
     this.imageFile = event.target.files[0];
   }
   onUpload() {
-    this.productService.getProducts().subscribe(data => {
-      this.products=data;
-    })
-    this.lastProduct = this.products[this.products.length - 1];
 
     const formData = new FormData();
     formData.append('', this.imageFile);
-    formData.append('ProductId', this.lastProduct.id.toString());
+    formData.append('ProductId', this.productId.toString());
 
     this.productService.PostImagePrincipal(formData).subscribe(
     (response) => {
