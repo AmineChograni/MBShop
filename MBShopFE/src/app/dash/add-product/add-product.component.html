@@ -32,9 +32,21 @@
     </form>
         
 </div>
-  
-<!-- Step 2: produit tailles et colors -->
+
+<!-- Step 2: produit Main Image -->
 <div *ngIf="currentStep === 2" >
+    
+    <h2>produit Image prancipal</h2>
+
+
+    <input type="file" (change)="onFileSelected($event)">
+
+    <button nz-button nzType="primary" (click)="prevStep()">Previous</button>
+    <button nz-button nzType="primary" (click)="onUpload()">Next</button>
+</div>
+  
+<!-- Step 3: produit tailles et colors -->
+<div *ngIf="currentStep === 3" >
     
     <h2>produit tailles et colors</h2>
 
@@ -44,8 +56,8 @@
     <button nz-button nzType="primary" (click)="nextStep()">Next</button>
 </div>
   
-<!-- Step 3: ajouter produit images par color -->
-<div *ngIf="currentStep === 3"  >
+<!-- Step 4: ajouter produit images par color -->
+<div *ngIf="currentStep === 4"  >
     
     <h2>ajouter produit images par color</h2>
     
