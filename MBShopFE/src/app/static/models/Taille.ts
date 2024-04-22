@@ -3,9 +3,11 @@ export class Taille{
     label: String;
     productId: Number;
 
-    constructor(id: Number, label: String, productId: Number){
+
+    constructor(label: String, productId: Number,id?: Number){
         this.id=id;
         this.label=label;
         this.productId=productId;
     }
+
 }

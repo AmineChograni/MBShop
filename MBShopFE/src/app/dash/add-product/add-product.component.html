@@ -45,19 +45,39 @@
     <button nz-button nzType="primary" (click)="onUpload()">Next</button>
 </div>
   
-<!-- Step 3: produit tailles et colors -->
+<!-- Step 3: produit tailles -->
 <div *ngIf="currentStep === 3" >
     
-    <h2>produit tailles et colors</h2>
+    <h2>produit tailles</h2>
+    <nz-select
+      [nzMaxTagCount]="3"
+      [nzMaxTagPlaceholder]="tagPlaceHolder"
+      nzMode="multiple"
+      nzPlaceHolder="Please select"
+      [(ngModel)]="listOfSelectedTailles"
+    >
+      <nz-option *ngFor="let item of listOfOption" [nzLabel]="item" [nzValue]="item"></nz-option>
+    </nz-select>
+    <ng-template #tagPlaceHolder let-selectedList>and {{ selectedList.length }} more selected</ng-template>
 
     
-
+    <button nz-button nzType="primary" (click)="nexttofourStep()">Next</button>
     <button nz-button nzType="primary" (click)="prevStep()">Previous</button>
+</div>
+
+<!-- Step 4: produit  colors -->
+<div *ngIf="currentStep === 4" >
+    
+    <h2>produit colors</h2>
+
+
+    
     <button nz-button nzType="primary" (click)="nextStep()">Next</button>
+    <button nz-button nzType="primary" (click)="prevStep()">Previous</button>
 </div>
   
-<!-- Step 4: ajouter produit images par color -->
-<div *ngIf="currentStep === 4"  >
+<!-- Step 5: ajouter produit images par color -->
+<div *ngIf="currentStep === 5"  >
     
     <h2>ajouter produit images par color</h2>
     

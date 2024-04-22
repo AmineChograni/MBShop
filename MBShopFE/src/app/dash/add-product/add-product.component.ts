@@ -3,6 +3,7 @@ import { FormControl,FormGroup, Validators } from '@angular/forms';
 import { Category } from 'src/app/static/models/Category';
 import { Product } from 'src/app/static/models/Product';
 import { ProductFP } from 'src/app/static/models/ProductFP';
+import { Taille } from 'src/app/static/models/Taille';
 import { ProductService } from 'src/app/static/services/product.service';
 
 @Component({
@@ -12,16 +13,23 @@ import { ProductService } from 'src/app/static/services/product.service';
 })
 export class AddProductComponent implements OnInit {
 
-  currentStep: number = 1;
+  currentStep: number = 4;
   selectedValue = null;
 
   imageFile: File;
 
+  tailles:Taille[]=[];
+
   categories: Category[] = [];
   productId: Number;
 
+
   firstForm: FormGroup;
-  secondForm: FormGroup;
+
+
+  //third form
+  listOfOption: string[] = [];
+  listOfSelectedTailles = [];
 
   
 
@@ -42,12 +50,18 @@ export class AddProductComponent implements OnInit {
       productPrice:new FormControl("",Validators.required),
       productCategory:new FormControl("",Validators.required),
     });
-    this.secondForm = new FormGroup({
-      productMainImage:new FormControl(null,Validators.required),
-    });
+
+    //third form 
+    const children: string[] = [];
+    for (let i = 25; i < 46; i++) {
+      children.push(`${i}`);
+    }
+    this.listOfOption = children;
+
+
   }
   
-
+  //first form
 
   submitFirstForm(): void {
     if (this.firstForm.valid) {
@@ -67,6 +81,8 @@ export class AddProductComponent implements OnInit {
       });
     }
   }
+
+  //second form
 
   onFileSelected(event: any) {
     this.imageFile = event.target.files[0];
@@ -91,13 +107,31 @@ export class AddProductComponent implements OnInit {
     this.currentStep++;
   }
 
+
+
   get productName() { return this.firstForm.get('productName')?.value };
   get productPrice() { return this.firstForm.get('productPrice')?.value };
   get productCategory() { return this.firstForm.get('productCategory')?.value };
 
 
-  
 
+  //third form
+
+  nexttofourStep(){
+
+    for (let  zise of this.listOfSelectedTailles) {
+      let taille = new Taille(zise,this.productId);
+      this.productService.postProductT(taille).subscribe(data=>{
+      });
+    }
+
+    this.currentStep++;
+  }
+
+
+
+  
+  //global function
   nextStep() {
     this.currentStep++;
   }

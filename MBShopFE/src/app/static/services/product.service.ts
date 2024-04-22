@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ProductFP } from '../models/ProductFP';
+import { Taille } from '../models/Taille';
 
 const httpOptions={
     headers:new HttpHeaders({'Content-type':'application/json'})
@@ -31,6 +32,11 @@ export class ProductService{
     postProductFP(product:ProductFP):Observable<any>{
         return this.httpClient.post<any>(`${this.productApi}/product`,product);
     }
+
+    postProductT(taille:Taille):Observable<any>{
+        return this.httpClient.post<any>(`${this.productApi}/tailles`,taille);
+    }
+
 
     PostImagePrincipal(formData:FormData): Observable<any> {
         
