@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ProductFP } from '../models/ProductFP';
 import { Taille } from '../models/Taille';
+import { Couleur } from '../models/Couleur';
 
 const httpOptions={
     headers:new HttpHeaders({'Content-type':'application/json'})
@@ -35,6 +36,10 @@ export class ProductService{
 
     postProductT(taille:Taille):Observable<any>{
         return this.httpClient.post<any>(`${this.productApi}/tailles`,taille);
+    }
+
+    postProductColor(color:Couleur):Observable<any>{
+        return this.httpClient.post<any>(`${this.productApi}/couleurs`,color);
     }
 
 

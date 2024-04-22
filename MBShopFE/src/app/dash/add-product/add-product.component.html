@@ -50,7 +50,7 @@
     
     <h2>produit tailles</h2>
     <nz-select
-      [nzMaxTagCount]="3"
+      [nzMaxTagCount]="6"
       [nzMaxTagPlaceholder]="tagPlaceHolder"
       nzMode="multiple"
       nzPlaceHolder="Please select"
@@ -70,9 +70,18 @@
     
     <h2>produit colors</h2>
 
-
+    <nz-select
+    [nzMaxTagCount]="6"
+    [nzMaxTagPlaceholder]="tagPlaceHolder2"
+    nzMode="multiple"
+    nzPlaceHolder="Please select"
+    [(ngModel)]="selectedColors"
+  >
+    <nz-option *ngFor="let color of colors" [nzLabel]="color.label" [nzValue]="color"></nz-option>
+  </nz-select>
+  <ng-template #tagPlaceHolder2 let-selectedList2>and {{ selectedList2.length }} more selected</ng-template>
     
-    <button nz-button nzType="primary" (click)="nextStep()">Next</button>
+    <button nz-button nzType="primary" (click)="nextToFiveStep()">Next</button>
     <button nz-button nzType="primary" (click)="prevStep()">Previous</button>
 </div>
   

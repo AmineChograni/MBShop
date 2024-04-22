@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup, Validators } from '@angular/forms';
 import { Category } from 'src/app/static/models/Category';
+import { Couleur } from 'src/app/static/models/Couleur';
 import { Product } from 'src/app/static/models/Product';
 import { ProductFP } from 'src/app/static/models/ProductFP';
 import { Taille } from 'src/app/static/models/Taille';
@@ -30,6 +31,29 @@ export class AddProductComponent implements OnInit {
   //third form
   listOfOption: string[] = [];
   listOfSelectedTailles = [];
+
+
+  //four form
+  colors: Couleur[] = [
+    { label: "Noir", codeColor: "#000000" },
+    { label: "Blanc", codeColor: "#FFFFFF" },
+    { label: "Rouge", codeColor: "#FF0000" },
+    { label: "Vert", codeColor: "#00FF00" },
+    { label: "Bleu", codeColor: "#0000FF" },
+    { label: "Jaune", codeColor: "#FFFF00" },
+    { label: "Orange", codeColor: "#FFA500" },
+    { label: "Violet", codeColor: "#800080" },
+    { label: "Rose", codeColor: "#FFC0CB" },
+    { label: "Marron", codeColor: "#A52A2A" },
+    { label: "Gris", codeColor: "#808080" },
+    { label: "Cyan", codeColor: "#00FFFF" },
+    { label: "tabac", codeColor: "#a88f6e" },
+    { label: "beige", codeColor: "#F5F5DC" },
+    { label: "gris fonce", codeColor: "#A9A9A9" },
+  ];
+
+  selectedColors: Couleur[] = [];
+
 
   
 
@@ -122,10 +146,26 @@ export class AddProductComponent implements OnInit {
     for (let  zise of this.listOfSelectedTailles) {
       let taille = new Taille(zise,this.productId);
       this.productService.postProductT(taille).subscribe(data=>{
+
       });
     }
 
     this.currentStep++;
+  }
+
+  //four form
+
+  nextToFiveStep(){
+
+    for ( let color of this.selectedColors){
+      color.productId = 35;
+      this.productService.postProductColor(color).subscribe(data=>{
+        
+      })
+    }
+
+    this.currentStep++;
+
   }
 
 
