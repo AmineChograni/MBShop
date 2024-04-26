@@ -21,6 +21,7 @@ export class PaiementComponent implements OnInit {
   prodQuantity:number;
   total:number;
   statu:String = 'pas encoure';
+  date:Date;
   categoryId:Number;
   
   commForm: FormGroup;
@@ -63,7 +64,8 @@ export class PaiementComponent implements OnInit {
       //console.log(this.prodName , this.prodColor, this.prodPoint, this.prodPrice, this.prodQuantity, this.total);
 
       //https://sheetdb.io/api/v1/1fuhwuz2s71hh
-      let command=new Command(this.name,this.tele,this.adr,this.ville,this.codep,this.email,this.prodName,this.prodPrice,this.prodQuantity,this.prodPoint,this.prodColor,this.total,this.statu);
+      this.date=new Date();
+      let command=new Command(this.name,this.tele,this.adr,this.ville,this.codep,this.email,this.prodName,this.prodPrice,this.prodQuantity,this.prodPoint,this.prodColor,this.total,this.statu,this.date);
       
       this.productService.postComm(command).subscribe(data=>{
         this.success();

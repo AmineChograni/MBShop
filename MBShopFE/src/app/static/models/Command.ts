@@ -12,11 +12,12 @@ export class Command{
     couleur_produit:String;
     prix_total:Number;
     statu:String;
+    date:Date;
 
 
 
 
-    constructor(nom_complet:String,telephone:Number,adresse:String,ville:String,code_postal:String,email:String,nom_produit:String,prix_produit:Number,quantite_produit:Number,pointure_produit:Number,couleur_produit:String,prix_total:Number,statu:String){
+    constructor(nom_complet:String,telephone:Number,adresse:String,ville:String,code_postal:String,email:String,nom_produit:String,prix_produit:Number,quantite_produit:Number,pointure_produit:Number,couleur_produit:String,prix_total:Number,statu:String,date:Date){
         
         this.nom_complet = nom_complet;
         this.telephone = telephone;
@@ -31,5 +32,6 @@ export class Command{
         this.couleur_produit = couleur_produit;
         this.prix_total = prix_total;
         this.statu=statu;
+        this.date=date;
     }
 }
