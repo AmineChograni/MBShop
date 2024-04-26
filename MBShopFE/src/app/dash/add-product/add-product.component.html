@@ -41,7 +41,6 @@
 
     <input type="file" (change)="onFileSelected($event)">
 
-    <button nz-button nzType="primary" (click)="prevStep()">Previous</button>
     <button nz-button nzType="primary" (click)="onUpload()">Next</button>
 </div>
   
@@ -62,7 +61,6 @@
 
     
     <button nz-button nzType="primary" (click)="nexttofourStep()">Next</button>
-    <button nz-button nzType="primary" (click)="prevStep()">Previous</button>
 </div>
 
 <!-- Step 4: produit  colors -->
@@ -82,15 +80,23 @@
   <ng-template #tagPlaceHolder2 let-selectedList2>and {{ selectedList2.length }} more selected</ng-template>
     
     <button nz-button nzType="primary" (click)="nextToFiveStep()">Next</button>
-    <button nz-button nzType="primary" (click)="prevStep()">Previous</button>
 </div>
   
 <!-- Step 5: ajouter produit images par color -->
 <div *ngIf="currentStep === 5"  >
     
     <h2>ajouter produit images par color</h2>
+
+    <nz-select
+    nzPlaceHolder="Please select product image color"
+    [(ngModel)]="selectedColor"
+  >
+    <nz-option *ngFor="let color of selectedColors" [nzLabel]="color.label" [nzValue]="color.label"></nz-option>
+  </nz-select>
+
+  <input type="file" (change)="onFileColorSelected($event)">
     
 
-    <button nz-button nzType="primary" (click)="prevStep()">Previous</button>
-    <button nz-button nzType="primary" (click)="submitLast()">Submit</button>
+    <button nz-button nzType="primary" (click)="nextImage()">Next Image</button>
+    <button nz-button nzType="primary" (click)="submitLast()">Fin</button>
 </div>

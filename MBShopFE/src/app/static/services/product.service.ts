@@ -42,6 +42,12 @@ export class ProductService{
         return this.httpClient.post<any>(`${this.productApi}/couleurs`,color);
     }
 
+    PostImageParColor(formData:FormData): Observable<any> {
+        
+    
+        return this.httpClient.post<any>(`${this.productApi}/prodImages`, formData);
+    }
+
 
     PostImagePrincipal(formData:FormData): Observable<any> {
         

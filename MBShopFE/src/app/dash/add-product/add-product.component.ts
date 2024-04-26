@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { FormControl,FormGroup, Validators } from '@angular/forms';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { Category } from 'src/app/static/models/Category';
 import { Couleur } from 'src/app/static/models/Couleur';
 import { Product } from 'src/app/static/models/Product';
@@ -14,10 +15,11 @@ import { ProductService } from 'src/app/static/services/product.service';
 })
 export class AddProductComponent implements OnInit {
 
-  currentStep: number = 4;
+  currentStep: number = 1;
   selectedValue = null;
 
   imageFile: File;
+  imageColorFile: File;
 
   tailles:Taille[]=[];
 
@@ -54,11 +56,13 @@ export class AddProductComponent implements OnInit {
 
   selectedColors: Couleur[] = [];
 
+  selectedColor: string;
+
 
   
 
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,private message: NzMessageService) { }
 
   ngOnInit(): void {
 
@@ -158,7 +162,7 @@ export class AddProductComponent implements OnInit {
   nextToFiveStep(){
 
     for ( let color of this.selectedColors){
-      color.productId = 35;
+      color.productId = this.productId;
       this.productService.postProductColor(color).subscribe(data=>{
         
       })
@@ -168,20 +172,36 @@ export class AddProductComponent implements OnInit {
 
   }
 
-
-
-  
-  //global function
-  nextStep() {
-    this.currentStep++;
+  //five from
+  onFileColorSelected(event: any) {
+    this.imageColorFile = event.target.files[0];
   }
 
-  prevStep() {
-    this.currentStep--;
+  nextImage(){
+    const formData = new FormData();
+    formData.append('', this.imageColorFile);
+    formData.append('productId', this.productId.toString());
+    formData.append('color', this.selectedColor);
+
+    this.productService.PostImageParColor(formData).subscribe(
+    (response) => {
+      console.log('Upload successful', response);
+      // Handle success response here
+      this.message.create('success', `Image bien ajouter`);
+    },
+    (error) => {
+      console.error('Upload failed', error);
+      // Handle error response here
+    }
+    
+    );
+
+    this.selectedColor='';
   }
+
 
   submitLast() {
-    // Handle form submission, e.g., send data to server
+    window.location.href=`http://localhost:4200/idaratesebate23`
   }
 
 }
